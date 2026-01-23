@@ -46,7 +46,7 @@ else:
     # Show user information
     st.header('User information:')
     st.write(st.session_state.user_info)
-
+    st.balloons()
     # Sign out
     st.header('Sign out:')
     st.button(label='Sign Out',on_click=auth_functions.sign_out,type='primary')
