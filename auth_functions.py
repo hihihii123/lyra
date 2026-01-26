@@ -7,25 +7,25 @@ import streamlit as st
 ## -------------------------------------------------------------------------------------------------
 
 def sign_in_with_email_and_password(email, password):
-    request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
+    request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY']) # from secrets.toml
     headers = {"content-type": "application/json; charset=UTF-8"}
-    data = json.dumps({"email": email, "password": password, "returnSecureToken": True})
-    request_object = requests.post(request_ref, headers=headers, data=data)
-    raise_detailed_error(request_object)
-    return request_object.json()
+    data = json.dumps({"email": email, "password": password, "returnSecureToken": True}) # prepares info (email&password) to verify
+    request_object = requests.post(request_ref, headers=headers, data=data) # sending info
+    raise_detailed_error(request_object) # is a user defined function
+    return request_object.json() # returns a .json file (?)
 
-def get_account_info(id_token):
+def get_account_info(id_token): # checks if user is valid
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8"}
-    data = json.dumps({"idToken": id_token})
-    request_object = requests.post(request_ref, headers=headers, data=data)
+    data = json.dumps({"idToken": id_token})  # proof user has signed in
+    request_object = requests.post(request_ref, headers=headers, data=data) 
     raise_detailed_error(request_object)
     return request_object.json()
 
 def send_email_verification(id_token):
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8"}
-    data = json.dumps({"requestType": "VERIFY_EMAIL", "idToken": id_token})
+    data = json.dumps({"requestType": "VERIFY_EMAIL", "idToken": id_token}) # calls on firebase function
     request_object = requests.post(request_ref, headers=headers, data=data)
     raise_detailed_error(request_object)
     return request_object.json()
@@ -38,7 +38,7 @@ def send_password_reset_email(email):
     raise_detailed_error(request_object)
     return request_object.json()
 
-def create_user_with_email_and_password(email, password):
+def create_user_with_email_and_password(email, password): # sign up func
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8" }
     data = json.dumps({"email": email, "password": password, "returnSecureToken": True})
@@ -56,7 +56,7 @@ def delete_user_account(id_token):
 
 def raise_detailed_error(request_object):
     try:
-        request_object.raise_for_status()
+        request_object.raise_for_status() # checks status code; 200-299 okay, 400-599 no
     except requests.exceptions.HTTPError as error:
         raise requests.exceptions.HTTPError(error, request_object.text)
 
