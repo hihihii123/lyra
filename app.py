@@ -2,7 +2,7 @@ import streamlit as st
 import auth_functions
 from PIL import Image
 im = Image.open('favicon.jpeg')
-st.set_page_config(page_title="Lyra", page_icon=im)
+st.set_page_config(page_title="Lyra", page_icon=im,layout='wide')
 ## -------------------------------------------------------------------------------------------------
 ## Not logged in -----------------------------------------------------------------------------------
 ## -------------------------------------------------------------------------------------------------
