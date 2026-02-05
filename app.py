@@ -43,15 +43,16 @@ if 'user_info' not in st.session_state:
 ## Logged in --------------------------------------------------------------------------------------
 ## -------------------------------------------------------------------------------------------------
 else:
-    # Show user information
-    st.header('User information:')
-    st.write(st.session_state.user_info)
-    st.balloons()
-    # Sign out
-    st.header('Sign out:')
-    st.button(label='Sign Out',on_click=auth_functions.sign_out,type='primary')
+    st.switch_page("./pages/home.py")
+    # # Show user information
+    # st.header('User information:')
+    # st.write(st.session_state.user_info)
+    # st.balloons()
+    # # Sign out
+    # st.header('Sign out:')
+    # st.button(label='Sign Out',on_click=auth_functions.sign_out,type='primary')
 
-    # Delete Account
-    st.header('Delete account:')
-    password = st.text_input(label='Confirm your password',type='password')
-    st.button(label='Delete Account',on_click=auth_functions.delete_account,args=[password],type='primary')
+    # # Delete Account
+    # st.header('Delete account:')
+    # password = st.text_input(label='Confirm your password',type='password')
+    # st.button(label='Delete Account',on_click=auth_functions.delete_account,args=[password],type='primary')
