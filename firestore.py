@@ -22,6 +22,10 @@
 import streamlit as st
 from google.cloud import firestore
 from google.oauth2 import service_account
+import firebase_admin
+from firebase_admin import auth, credentials
+
+
 
 # Load credentials
 creds = service_account.Credentials.from_service_account_info(st.secrets["firestore"])
@@ -29,15 +33,15 @@ db = firestore.Client(credentials=creds, project=st.secrets['firestore']['projec
 
 
 # Write a doc
-def writeToFirestore(collection, documentid, content):
+def writeDocumentToCollection(collection, documentid, content):
     doc_ref = db.collection(collection).document(documentid)
     doc_ref.set(content)
 
 
 # Read a specific document (for id, use doc.id. maybe separate function or something)
-def readFromFirestore(collection, documentid, key=None, type=None):
+def readDocumentFromCollection(collection, documentid, key=None, type=None):
     doc_ref = db.collection(collection).document(documentid)
-    doc = doc_ref.get()
+    doc = doc_ref.get() 
 
     if doc.exists:
         st.write(doc)
@@ -49,14 +53,14 @@ def readFromFirestore(collection, documentid, key=None, type=None):
         print("No such document")
 
 
-def deleteFromFirestore(collection, documentid): # doesnt delete subcollections
+
+def deleteFromCollection(collection, documentid): # doesnt delete subcollections
     if db.collection(collection).document(documentid).get().exists:
         db.collection(collection).document(documentid).delete()
     else:
         print("No such document")
 
-
-writeToFirestore('users', '4', {'name': 'Martshias', 'subjects': ['Chinese', 'Chemistry'], 'year':2011})
+# writeDocumentToCollection('users', '4', {'name': 'Martshias', 'subjects': ['Chinese', 'Chemistry'], 'year':2011})
 # st.write(readFromFirestore('users', '2', 'name'))
 # deleteFromFirestore("users", "2")
 

@@ -1,6 +1,18 @@
 import json
 import requests
 import streamlit as st
+import firebase_admin
+from firebase_admin import credentials, auth, firestore
+
+## -------------------------------------------------------------------------------------------------
+## Initiliase firebase admin -------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
+if not firebase_admin._apps:
+    cred = credentials.Certificate(dict(st.secrets["firestore"]))
+    firebase_admin.initialize_app(cred)
+
+db = firestore.client()
+
 
 ## -------------------------------------------------------------------------------------------------
 ## Firebase Auth API -------------------------------------------------------------------------------
@@ -53,6 +65,12 @@ def delete_user_account(id_token):
     request_object = requests.post(request_ref, headers=headers, data=data)
     raise_detailed_error(request_object)
     return request_object.json()
+
+def getUserId(email):
+    try:
+        return auth.get_user_by_email(email).uid
+    except auth.UserNotFoundError:
+        return None
 
 def raise_detailed_error(request_object):
     try:
