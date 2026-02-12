@@ -27,11 +27,12 @@ def cleanLines(text):
 
 with pdfplumber.open("resources/Computing Textbook.pdf") as pdf:
     for page in pdf.pages:
-        text = page.extract_text(x_tolerance=2, y_tolerance=2) or ""
+        text = page.extract_text(x_tolerance=3, y_tolerance=3) or ""
         text = (text.split("\n"))
 
-        pass
+        for line in text:
+            print(line)
 
-with open("DATA.json", "w", encoding="utf-8") as fout:
-    json.dump(fout, indent=2, ensure_ascii=False)
-    print("Saved json")
+# with open("DATA.json", "w", encoding="utf-8") as fout:
+#     json.dump(fout, indent=2, ensure_ascii=False)
+#     print("Saved json")

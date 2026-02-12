@@ -60,7 +60,7 @@ def delete_user_account(id_token):
 def getUserId():
     info = st.session_state.get("user_info")
     if not info:
-        return None
+        return "No user id found"
     return info.get("localId")
 
 def raise_detailed_error(request_object):
