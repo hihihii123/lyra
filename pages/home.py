@@ -1,5 +1,5 @@
 import streamlit as st
-import auth_functions
+from auth_functions import getUserId
 
 
 
@@ -12,8 +12,8 @@ st.balloons()
 
 
 
-
-st.header("Welcome, user")
+uid = getUserId()
+st.header(f"Welcome, user: {uid}")
 
 if st.button("Go to settings"):
     st.switch_page("./pages/settings.py")
