@@ -2,6 +2,7 @@ import streamlit as st
 import auth_functions
 from PIL import Image
 im = Image.open('favicon.jpeg')
+newuser = False
 st.set_page_config(page_title="Lyra", page_icon=im,layout='wide')
 ## -------------------------------------------------------------------------------------------------
 ## Not logged in -----------------------------------------------------------------------------------
@@ -25,6 +26,7 @@ if 'user_info' not in st.session_state:
     elif do_you_have_an_account == 'No' and auth_form.form_submit_button(label='Create Account',use_container_width=True,type='primary'):
         with auth_notification, st.spinner('Creating account'):
             auth_functions.create_account(email,password)
+        newuser = True
 
     # Password Reset
     elif do_you_have_an_account == 'I forgot my password' and auth_form.form_submit_button(label='Send Password Reset Email',use_container_width=True,type='primary'):
@@ -43,7 +45,10 @@ if 'user_info' not in st.session_state:
 ## Logged in --------------------------------------------------------------------------------------
 ## -------------------------------------------------------------------------------------------------
 else:
-    st.switch_page("./pages/home.py")
+    if newuser:
+        st.switch_page("./pages/onboarding.py")
+    else:
+        st.switch_page("./pages/home.py")
     # # Show user information
     # st.header('User information:')
     # st.write(st.session_state.user_info)
@@ -56,3 +61,5 @@ else:
     # st.header('Delete account:')
     # password = st.text_input(label='Confirm your password',type='password')
     # st.button(label='Delete Account',on_click=auth_functions.delete_account,args=[password],type='primary')
+if st.button('[DEBUG] check onboarding'):
+    st.switch_page("./pages/onboarding.py")

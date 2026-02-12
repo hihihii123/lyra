@@ -19,3 +19,4 @@ if st.button("Go to settings"):
     st.switch_page("./pages/settings.py")
 
 
+
