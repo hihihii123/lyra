@@ -27,7 +27,8 @@ with col2:
                     font-family: 'Inter';sans-serif;
                     }
                     #boxid{
-                    width:500px;
+                    flex:auto;
+                    
                     height:500px;
                     border:1px solid #0000ff;
                     justify-content:center;
