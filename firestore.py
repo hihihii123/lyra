@@ -23,14 +23,11 @@ import streamlit as st
 from google.cloud import firestore
 from google.oauth2 import service_account
 import firebase_admin
-from firebase_admin import auth, credentials
+from firebase_admin import credentials, firestore
 
-
-
-# Load credentials
+# Load db
 creds = service_account.Credentials.from_service_account_info(st.secrets["firestore"])
 db = firestore.Client(credentials=creds, project=st.secrets['firestore']['project_id'])
-
 
 # Write a doc
 def writeDocumentToCollection(collection, documentid, content):
@@ -61,6 +58,6 @@ def deleteFromCollection(collection, documentid): # doesnt delete subcollections
         print("No such document")
 
 # writeDocumentToCollection('users', '4', {'name': 'Martshias', 'subjects': ['Chinese', 'Chemistry'], 'year':2011})
-# st.write(readFromFirestore('users', '2', 'name'))
+print(readDocumentFromCollection('users', '2', 'name'))
 # deleteFromFirestore("users", "2")
 

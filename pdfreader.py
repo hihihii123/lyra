@@ -30,11 +30,8 @@ with pdfplumber.open("resources/Computing Textbook.pdf") as pdf:
         text = page.extract_text(x_tolerance=2, y_tolerance=2) or ""
         text = (text.split("\n"))
 
-        for line in text:
-            line = line.strip()
-            if not line:
-                continue
+        pass
 
 with open("DATA.json", "w", encoding="utf-8") as fout:
     json.dump(fout, indent=2, ensure_ascii=False)
-    print("Saved to json")
+    print("Saved json")
