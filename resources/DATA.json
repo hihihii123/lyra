@@ -1,0 +1,340 @@
+[
+  {
+    "chaptername": "Chapter 1 Computer Architecture",
+    "subtopics": [
+      {
+        "name": "1.1 Introduction to Computer Architecture",
+        "content": []
+      },
+      {
+        "name": "1.2 Units of Data",
+        "content": []
+      },
+      {
+        "name": "1.3 Components of a Computer System",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 2 Data Representation",
+    "subtopics": [
+      {
+        "name": "2.1 Introduction to Data Representation",
+        "content": []
+      },
+      {
+        "name": "2.2 Understanding Number Systems and Conversion Techniques",
+        "content": []
+      },
+      {
+        "name": "2.3 Representing Negative Numbers",
+        "content": []
+      },
+      {
+        "name": "2.4 Representing Text",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 3 Logic Gates",
+    "subtopics": [
+      {
+        "name": "3.1 Boolean Logic",
+        "content": []
+      },
+      {
+        "name": "3.2 Truth Tables",
+        "content": []
+      },
+      {
+        "name": "3.3 Logic Gates",
+        "content": []
+      },
+      {
+        "name": "3.4 Logic Circuits",
+        "content": []
+      },
+      {
+        "name": "3.5 Manipulating Boolean Statements",
+        "content": []
+      },
+      {
+        "name": "3.6 Solving System Problems",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 4 Programming",
+    "subtopics": [
+      {
+        "name": "4.1 Introduction to Algorithms and Programming",
+        "content": []
+      },
+      {
+        "name": "4.2 Defining Problems",
+        "content": []
+      },
+      {
+        "name": "4.3 Installing Python",
+        "content": []
+      },
+      {
+        "name": "4.4 Comments",
+        "content": []
+      },
+      {
+        "name": "4.5 Literals and Variables",
+        "content": []
+      },
+      {
+        "name": "4.6 Functions, Methods and Operators",
+        "content": []
+      },
+      {
+        "name": "4.7 Data Types",
+        "content": []
+      },
+      {
+        "name": "4.8 Input and Output",
+        "content": []
+      },
+      {
+        "name": "4.9 Booleans",
+        "content": []
+      },
+      {
+        "name": "4.10 Integers and Floating-Point Numbers",
+        "content": []
+      },
+      {
+        "name": "4.11 Strings",
+        "content": []
+      },
+      {
+        "name": "4.12 Lists",
+        "content": []
+      },
+      {
+        "name": "4.13 Dictionaries",
+        "content": []
+      },
+      {
+        "name": "4.14 Control Flow",
+        "content": []
+      },
+      {
+        "name": "4.15 User-Defined Functions",
+        "content": []
+      },
+      {
+        "name": "4.16 with Statements",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 5 Input Validation",
+    "subtopics": [
+      {
+        "name": "5.1 Why Validation is Needed",
+        "content": []
+      },
+      {
+        "name": "5.2 Recovering from Invalid Input",
+        "content": []
+      },
+      {
+        "name": "5.3 Common Validation Checks",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 6 Testing and Debugging",
+    "subtopics": [
+      {
+        "name": "6.1 Bugs and Debugging",
+        "content": []
+      },
+      {
+        "name": "6.2 Types of Program Errors",
+        "content": []
+      },
+      {
+        "name": "6.3 Designing Test Cases",
+        "content": []
+      },
+      {
+        "name": "6.4 Common Debugging Techniques",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 7 Algorithm Design",
+    "subtopics": [
+      {
+        "name": "7.1 Introduction to Algorithm Design",
+        "content": []
+      },
+      {
+        "name": "7.2 Decomposition",
+        "content": []
+      },
+      {
+        "name": "7.3 Generalisation",
+        "content": []
+      },
+      {
+        "name": "7.4 Common Problems and Solutions",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 8 Software Engineering",
+    "subtopics": [
+      {
+        "name": "8.1 Stages in Developing a Program",
+        "content": []
+      },
+      {
+        "name": "8.2 Alternative Methodologies",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 9 Spreadsheets",
+    "subtopics": [
+      {
+        "name": "9.1 Understanding Spreadsheets",
+        "content": []
+      },
+      {
+        "name": "9.2 Logical Operators and Functions",
+        "content": []
+      },
+      {
+        "name": "9.3 Mathematical and Statistical Operators and Functions",
+        "content": []
+      },
+      {
+        "name": "9.4 Text Functions",
+        "content": []
+      },
+      {
+        "name": "9.5 Lookup Functions",
+        "content": []
+      },
+      {
+        "name": "9.6 Date Functions",
+        "content": []
+      },
+      {
+        "name": "9.7 Goal Seek",
+        "content": []
+      },
+      {
+        "name": "9.8 Conditional Formatting",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 10 Networking",
+    "subtopics": [
+      {
+        "name": "10.1 Introduction to Computer Networks",
+        "content": []
+      },
+      {
+        "name": "10.2 Types of Computer Networks",
+        "content": []
+      },
+      {
+        "name": "10.3 Protocols and Error Detection",
+        "content": []
+      },
+      {
+        "name": "10.4 Home Networks and the Internet",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 11 Security and Privacy",
+    "subtopics": [
+      {
+        "name": "11.1 Defining Security and Privacy",
+        "content": []
+      },
+      {
+        "name": "11.2 Threats",
+        "content": []
+      },
+      {
+        "name": "11.3 Defences",
+        "content": []
+      },
+      {
+        "name": "11.4 Analysis",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 12 Intellectual Property",
+    "subtopics": [
+      {
+        "name": "12.1 Introduction to Intellectual Property",
+        "content": []
+      },
+      {
+        "name": "12.2 Copyright",
+        "content": []
+      },
+      {
+        "name": "12.3 Software Licenses",
+        "content": []
+      },
+      {
+        "name": "12.4 Software Piracy",
+        "content": []
+      },
+      {
+        "name": "12.5 Copyright Infringement",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 13 Impact of Computing",
+    "subtopics": [
+      {
+        "name": "13.1 Impact of Computing on Different Industries",
+        "content": []
+      },
+      {
+        "name": "13.2 Proliferation of Falsehoods",
+        "content": []
+      }
+    ]
+  },
+  {
+    "chaptername": "Chapter 14 Emerging Technologies",
+    "subtopics": [
+      {
+        "name": "14.1 Artificial Intelligence",
+        "content": []
+      },
+      {
+        "name": "14.2 Other Emerging Technologies",
+        "content": []
+      }
+    ]
+  }
+]

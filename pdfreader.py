@@ -1,8 +1,6 @@
 import pdfplumber
-import re
 import json
 
-chapters = []
 
 def cleanLines(text):
     result = []
@@ -19,20 +17,42 @@ def cleanLines(text):
             result.append(temp.strip())
             temp = ""
 
-    if temp.strip():
-        result.append(temp.strip())
+    return (result if result else "")
 
-    return result
+def cleanTable():
+    pass
 
 
+chapters = []
 with pdfplumber.open("resources/Computing Textbook.pdf") as pdf:
-    for page in pdf.pages:
-        text = page.extract_text(x_tolerance=3, y_tolerance=3) or ""
-        text = (text.split("\n"))
+    text = []
+    for page in pdf.pages[3:6]:
+        text += [i.rsplit(" ",1)[0] for i in page.extract_text().split("\n")] # removes page number
+    
+    tempdata = []
 
-        for line in text:
-            print(line)
+    n = 0
+    while n < len(text):
+        possible = text[n]
+        if "Chapter" in possible:
+            chapterdata = {"chaptername": possible, "subtopics": []}
+            n += 1
+            while n < len(text) and "Chapter" not in text[n]:
+                if "." in text[n]:
+                    chapterdata["subtopics"].append({"name": text[n], "content": []})
+                n += 1
+            chapters.append(chapterdata)
+        else:
+            n += 1  
+            
 
-# with open("DATA.json", "w", encoding="utf-8") as fout:
-#     json.dump(fout, indent=2, ensure_ascii=False)
-#     print("Saved json")
+    # /TODO/
+    for page in pdf.pages[7:]:
+        text = page.extract_text(x_tolerance=6, y_tolerance=6) or ""
+        text = (cleanLines(text.split("\n")))
+
+        
+
+with open("resources/DATA.json", "w", encoding="utf-8") as fout:
+    json.dump(chapters, fout, indent=2, ensure_ascii=False)
+    print("Saved json")
