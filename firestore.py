@@ -1,24 +1,3 @@
-# structure
-'''
-1. users/{userid}}
-    > name
-    > year
-    > subjectCodes (array)
-2. studyPlans/{planid}
-    > name
-    > subjectCode
-    > tasks (array??)
-    > planCompletion
-    > completionDate
-    > archived
-3. tasks/{taskid}
-    > name
-    > description
-    > completionStatus
-    > startDate
-    > dueDate
-'''
-
 import streamlit as st
 from google.cloud import firestore
 from google.oauth2 import service_account
@@ -27,26 +6,48 @@ from google.oauth2 import service_account
 creds = service_account.Credentials.from_service_account_info(st.secrets["firestore"])
 db = firestore.Client(credentials=creds, project=st.secrets['firestore']['project_id'])
 
-# Write a doc
-def writeDocumentToCollection(collection, documentid, content):
-    doc_ref = db.collection(collection).document(documentid)
-    doc_ref.set(content)
+
+# Write a doc  -- maybe change documentid to userid if root level is standardised
+def writeorupdateDocument(collection, documentid, content, subcollection=None, subcollectionid=None):
+    """
+    Docstring for writeorupdateDocument
+    
+    :param collection: str; collection name
+    :param documentid: str; typically user id
+    :param content: dict; content to write in collection or subcollection depending on specifications
+    :param subcollection: str, [subcollection name]
+    :param subcollectionid: str, [subcollection document id]
+    """
+    if subcollection:
+        if not subcollectionid:
+            print("subcollectionid is required")
+        doc_ref = db.collection(collection).document(documentid).collection(subcollection).document(subcollectionid)
+    else:
+        doc_ref = db.collection(collection).document(documentid)
+
+    doc_ref.set(content, merge=True) # merge updates existing fields
 
 
-# Read a specific document (for id, use doc.id. maybe separate function or something)
-def readDocumentFromCollection(collection, documentid, key=None, type=None):
-    doc_ref = db.collection(collection).document(documentid)
-    doc = doc_ref.get() 
+# Read a specific document (for id,  use getUserId from auth_functions)
+def readDocumentFromCollection(collection, documentid, subcollection=None, subcollectionid=None, field=None):
+    if subcollection:
+        if not subcollectionid:
+            print("subcollectionid is required")
+        doc_ref = db.collection(collection).document(documentid).collection(subcollection).document(subcollectionid)
+    else:
+        doc_ref = db.collection(collection).document(documentid)
+
+    doc = doc_ref.get()
 
     if doc.exists:
-        st.write(doc)
-        if key is None:
-            return doc.to_dict()
+        doc = doc.to_dict()
+        if not field:
+            return doc
         else:
-            return doc.to_dict()[key]
+            return doc[field]
     else:
         print("No such document")
-
+        return None
 
 
 def deleteFromCollection(collection, documentid): # doesnt delete subcollections
@@ -55,7 +56,9 @@ def deleteFromCollection(collection, documentid): # doesnt delete subcollections
     else:
         print("No such document")
 
-# writeDocumentToCollection('users', '4', {'name': 'Martshias', 'subjects': ['Chinese', 'Chemistry'], 'year':2011})
-print(readDocumentFromCollection('users', '2', 'name'))
+
+
+writeorupdateDocument('users', '4', {'weak': ['None'], 'strong': ['NOI']}, "preferences", "strengths")
+# print(readDocumentFromCollection('users', '2'))
 # deleteFromFirestore("users", "2")
 
