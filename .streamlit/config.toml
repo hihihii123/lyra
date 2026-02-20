@@ -2,3 +2,5 @@
 showSidebarNavigation = false
 [theme]
 backgroundColor = "rgb(230, 230, 230)"
+primaryColor = "rgb(184, 151, 255)"
+font = "inter"

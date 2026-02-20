@@ -8,7 +8,8 @@ st.set_page_config(page_title="Onboarding",layout='wide')
 try:
     var = st.session_state.user_info
 except Exception:
-    st.switch_page('app.py')#Extracted through chatgpt
+    st.switch_page('app.py')
+#Extracted through chatgpt
 chapters = [
   "Computer Architecture",
   "Data Representation",
@@ -139,7 +140,6 @@ task_obj_list = []
 
 
 
-
 class study_task:
     """
     Access chapter and topics more easily
@@ -151,8 +151,10 @@ class study_task:
         return [chapters[self.x],subtopics[chapters[self.x]][self.y]]
 task_list = [study_task(0,0).getitem()]
 if 'tasklist' not in st.session_state:
+    print('activate first')
     st.session_state['tasklist'] = [study_task(0,0).getitem()]
 else:
+    print('activate second')
     task_list = st.session_state['tasklist']
 st.markdown("""
 <style>
@@ -193,10 +195,11 @@ with col2:
                     }
             </style>
             """,unsafe_allow_html=True)
+        
         with stylable_container(key="goback",css_styles="""
 {
                     flex:auto;
-                    height:750px;
+                    height:auto;
                     border-radius:25px;
                     justify-content:left;
                     padding:50px;
@@ -204,6 +207,11 @@ with col2:
                     }
                      """):
             print("WHATTT",task_list)
+            temp = []
+            for i in range(len(task_list)):
+                if task_list[i][0] != None:
+                    temp.append([task_list[i][0],task_list[i][1]]) #Matthias you can optimize this
+            task_list = temp
             for i in range(len(task_list)):
                 task_obj_list.append(st.empty())
                 task_obj_list[i] = st.container(border=True)
@@ -211,21 +219,26 @@ with col2:
                     sub1,sub2 = st.columns([15,1])
                     with sub1:
                         task_list[i][0] = st.selectbox("Chapter",chapters,index=chapters.index(task_list[i][0]),key=f'tasklist_0_{i}')
-                        print('weirdlist',subtopics[task_list[i][0]])
+                        #print('weirdlist',subtopics[task_list[i][0]])
                         if task_list[i][1] in subtopics:
                             task_list[i][1] = st.selectbox("Topic",subtopics[task_list[i][0]],index=subtopics[task_list[i][0]].index(task_list[i][1]),key=f'tasklist_1_{i}')
                         else:
                             task_list[i][1] = st.selectbox("Topic",subtopics[task_list[i][0]],key=f'tasklist_1_{i}')
                     with sub2:
                         if st.button('❌',key=f'task_delete_{i}'):
-                            print('bad boy')
-
+                            print("Lenght of things",task_list)
+                            print("I",i)
+                            task_list[i][0] = task_list[i][1] = None
+            st.session_state['tasklist'] = task_list
             if st.button('Add one more?'):
-                task_list.append(study_task(chapters.index(task_list[-1][0]),subtopics[task_list[-1][0]].index(task_list[-1][1])).getitem())
-                time.sleep(0.1)
+                if len(task_list) == 0:
+                    task_list = [study_task(0,0).getitem()]
+                else:
+                    task_list.append(study_task(chapters.index(task_list[-1][0]),subtopics[task_list[-1][0]].index(task_list[-1][1])).getitem())
+                time.sleep(0.5)
             st.session_state['tasklist'] = task_list
 
-            print(task_list,'NICE TASKLIST')
+            #print(task_list,'NICE TASKLIST')
 
 
             
