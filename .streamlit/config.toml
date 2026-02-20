@@ -1,2 +1,4 @@
 [client]
 showSidebarNavigation = false
+[theme]
+backgroundColor = "rgb(230, 230, 230)"
