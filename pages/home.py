@@ -31,7 +31,8 @@ with col1:
                         }
                         """):
              st.text("There doesn't seem to be any recent study things!")
-             st.button("create one!")
+             if st.button("create one!"):
+                  st.switch_page("./pages/study_page.py")
     else:
         with stylable_container(key="goback",css_styles="""
             {
