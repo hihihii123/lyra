@@ -30,14 +30,18 @@ subtopics = {
   "Computer Architecture": [
     "Introduction to Computer Architecture",
     "Units of Data",
-    "Components of a Computer System"
+    "Components of a Computer System",
+    "Entire Chapter"
   ],
 
   "Data Representation": [
     "Introduction to Data Representation",
     "Understanding Number Systems and Conversion Techniques",
     "Representing Negative Numbers",
-    "Representing Text"
+    "Representing Text",
+    "Entire Chapter"
+
+
   ],
 
   "Logic Gates": [
@@ -46,7 +50,8 @@ subtopics = {
     "Logic Gates",
     "Logic Circuits",
     "Manipulating Boolean Statements",
-    "Solving System Problems"
+    "Solving System Problems",
+    "Entire Chapter"
   ],
 
   "Programming": [
@@ -65,32 +70,37 @@ subtopics = {
     "Dictionaries",
     "Control Flow",
     "User-Defined Functions",
-    "with Statements"
+    "with Statements",
+    "Entire Chapter"
   ],
 
   "Input Validation": [
     "Why Validation is Needed",
     "Recovering from Invalid Input",
-    "Common Validation Checks"
+    "Common Validation Checks",
+    "Entire Chapter"
   ],
 
   "Testing and Debugging": [
     "Bugs and Debugging",
     "Types of Program Errors",
     "Designing Test Cases",
-    "Common Debugging Techniques"
+    "Common Debugging Techniques",
+    "Entire Chapter"
   ],
 
   "Algorithm Design": [
     "Introduction to Algorithm Design",
     "Decomposition",
     "Generalisation",
-    "Common Problems and Solutions"
+    "Common Problems and Solutions",
+    "Entire Chapter"
   ],
 
   "Software Engineering": [
     "Stages in Developing a Program",
-    "Alternative Methodologies"
+    "Alternative Methodologies",
+    "Entire Chapter"
   ],
 
   "Spreadsheets": [
@@ -101,21 +111,24 @@ subtopics = {
     "Lookup Functions",
     "Date Functions",
     "Goal Seek",
-    "Conditional Formatting"
+    "Conditional Formatting",
+    "Entire Chapter"
   ],
 
   "Networking": [
     "Introduction to Computer Networks",
     "Types of Computer Networks",
     "Protocols and Error Detection",
-    "Home Networks and the Internet"
+    "Home Networks and the Internet",
+    "Entire Chapter"
   ],
 
   "Security and Privacy": [
     "Defining Security and Privacy",
     "Threats",
     "Defences",
-    "Analysis"
+    "Analysis",
+    "Entire Chapter"
   ],
 
   "Intellectual Property": [
@@ -123,17 +136,20 @@ subtopics = {
     "Copyright",
     "Software Licenses",
     "Software Piracy",
-    "Copyright Infringement"
+    "Copyright Infringement",
+    "Entire Chapter"
   ],
 
   "Impact of Computing": [
     "Impact of Computing on Different Industries",
-    "Proliferation of Falsehoods"
+    "Proliferation of Falsehoods",
+    "Entire Chapter"
   ],
 
   "Emerging Technologies": [
     "Artificial Intelligence",
-    "Other Emerging Technologies"
+    "Other Emerging Technologies",
+    "Entire Chapter"
   ]
 }
 task_obj_list = []
@@ -143,16 +159,20 @@ task_obj_list = []
 class study_task:
     """
     Access chapter and topics more easily
+    Parameters:
+    z: user confidence in subtopic
     """
-    def __init__(self,x:int,y:int):
+    def __init__(self,x:int,y:int,z:int,comments=None):
         self.x = x
         self.y=y
+        self.z = z
+        self.comments = comments
     def getitem(self):
-        return [chapters[self.x],subtopics[chapters[self.x]][self.y]]
-task_list = [study_task(0,0).getitem()]
+        return [chapters[self.x],subtopics[chapters[self.x]][self.y],self.z]
+task_list = [study_task(0,0,5).getitem()]
 if 'tasklist' not in st.session_state:
     print('activate first')
-    st.session_state['tasklist'] = [study_task(0,0).getitem()]
+    st.session_state['tasklist'] = [study_task(0,0,5).getitem()]
 else:
     print('activate second')
     task_list = st.session_state['tasklist']
@@ -206,11 +226,11 @@ with col2:
                     background:#e6e6e6;
                     }
                      """):
-            print("WHATTT",task_list)
             temp = []
+            changed = False
             for i in range(len(task_list)):
                 if task_list[i][0] != None:
-                    temp.append([task_list[i][0],task_list[i][1]]) #Matthias you can optimize this
+                    temp.append([task_list[i][0],task_list[i][1],task_list[i][2]]) #Matthias you can optimize this
             task_list = temp
             for i in range(len(task_list)):
                 task_obj_list.append(st.empty())
@@ -220,23 +240,37 @@ with col2:
                     with sub1:
                         task_list[i][0] = st.selectbox("Chapter",chapters,index=chapters.index(task_list[i][0]),key=f'tasklist_0_{i}')
                         #print('weirdlist',subtopics[task_list[i][0]])
-                        if task_list[i][1] in subtopics:
+                        print('values',sum(subtopics.values(),[]))
+                        if task_list[i][1] in subtopics[task_list[i][0]]:
                             task_list[i][1] = st.selectbox("Topic",subtopics[task_list[i][0]],index=subtopics[task_list[i][0]].index(task_list[i][1]),key=f'tasklist_1_{i}')
                         else:
                             task_list[i][1] = st.selectbox("Topic",subtopics[task_list[i][0]],key=f'tasklist_1_{i}')
+                        task_list[i][2] = st.slider("How confident are you in the topic?",0,10,5,key=f'tasklist_2_{i}')
                     with sub2:
                         if st.button('❌',key=f'task_delete_{i}'):
                             print("Lenght of things",task_list)
                             print("I",i)
                             task_list[i][0] = task_list[i][1] = None
+                            changed=True
+            if changed:
+                st.session_state['tasklist'] = task_list
+                st.rerun()
+
             st.session_state['tasklist'] = task_list
-            if st.button('Add one more?'):
+            if st.button('Add task'):
                 if len(task_list) == 0:
-                    task_list = [study_task(0,0).getitem()]
+                    task_list = [study_task(0,0,5).getitem()]
                 else:
-                    task_list.append(study_task(chapters.index(task_list[-1][0]),subtopics[task_list[-1][0]].index(task_list[-1][1])).getitem())
-                time.sleep(0.5)
-            st.session_state['tasklist'] = task_list
+                    print('THIS SHOULD NOT HAPPEN')
+                    task_list.append(study_task(chapters.index(task_list[-1][0]),subtopics[task_list[-1][0]].index(task_list[-1][1]),5).getitem())
+                st.session_state['tasklist'] = task_list
+                st.rerun()
+          
+
+
+            print("WHATTT",task_list)
+
+            
 
             #print(task_list,'NICE TASKLIST')
 

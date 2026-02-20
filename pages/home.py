@@ -17,7 +17,7 @@ recent_study_things = [] #to fill up
 
 uid = getUserId()
 st.header(f"Welcome, user: {uid}")
-col1,col2,col3 = st.columns([4,6,1])
+col1,col2,col3 = st.columns([2,6,1])
 with col1:
     if len(recent_study_things)==0:
         with stylable_container(key="goback",css_styles="""
