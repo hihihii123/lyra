@@ -11,144 +11,144 @@ except Exception:
     st.switch_page('app.py')
 #Extracted through chatgpt
 chapters = [
-  "Computer Architecture",
-  "Data Representation",
-  "Logic Gates",
-  "Programming",
-  "Input Validation",
-  "Testing and Debugging",
-  "Algorithm Design",
-  "Software Engineering",
-  "Spreadsheets",
-  "Networking",
-  "Security and Privacy",
-  "Intellectual Property",
-  "Impact of Computing",
-  "Emerging Technologies"
+  "1. Computer Architecture",
+  "2. Data Representation",
+  "3. Logic Gates",
+  "4. Programming",
+  "5. Input Validation",
+  "6. Testing and Debugging",
+  "7. Algorithm Design",
+  "8. Software Engineering",
+  "9. Spreadsheets",
+  "10. Networking",
+  "11. Security and Privacy",
+  "12. Intellectual Property",
+  "13. Impact of Computing",
+  "14. Emerging Technologies"
 ]
 subtopics = {
-  "Computer Architecture": [
-    "Introduction to Computer Architecture",
-    "Units of Data",
-    "Components of a Computer System",
+  "1. Computer Architecture": [
+    "1.1 Introduction to Computer Architecture",
+    "1.2 Units of Data",
+    "1.3 Components of a Computer System",
     "Entire Chapter"
   ],
 
-  "Data Representation": [
-    "Introduction to Data Representation",
-    "Understanding Number Systems and Conversion Techniques",
-    "Representing Negative Numbers",
-    "Representing Text",
+  "2. Data Representation": [
+    "2.1 Introduction to Data Representation",
+    "2.2 Understanding Number Systems and Conversion Techniques",
+    "2.3 Representing Negative Numbers",
+    "2.4 Representing Text",
     "Entire Chapter"
 
 
   ],
 
-  "Logic Gates": [
-    "Boolean Logic",
-    "Truth Tables",
-    "Logic Gates",
-    "Logic Circuits",
-    "Manipulating Boolean Statements",
-    "Solving System Problems",
+  "3. Logic Gates": [
+    "3.1 Boolean Logic",
+    "3.2 Truth Tables",
+    "3.3 Logic Gates",
+    "3.4 Logic Circuits",
+    "3.5 Manipulating Boolean Statements",
+    "3.6 Solving System Problems",
     "Entire Chapter"
   ],
 
-  "Programming": [
-    "Introduction to Algorithms and Programming",
-    "Defining Problems",
-    "Installing Python",
-    "Comments",
-    "Literals and Variables",
-    "Functions, Methods and Operators",
-    "Data Types",
-    "Input and Output",
-    "Booleans",
-    "Integers and Floating-Point Numbers",
-    "Strings",
-    "Lists",
-    "Dictionaries",
-    "Control Flow",
-    "User-Defined Functions",
-    "with Statements",
+  "4. Programming": [
+    "4.1 Introduction to Algorithms and Programming",
+    "4.2 Defining Problems",
+    "4.3 Installing Python",
+    "4.4 Comments",
+    "4.5Literals and Variables",
+    "4.6 Functions, Methods and Operators",
+    "4.7 Data Types",
+    "4.8 Input and Output",
+    "4.9 Booleans",
+    "4.10 Integers and Floating-Point Numbers",
+    "4.11 Strings",
+    "4.12 Lists",
+    "4.13 Dictionaries",
+    "4.14 Control Flow",
+    "4.15 User-Defined Functions",
+    "4.16 with Statements",
     "Entire Chapter"
   ],
 
-  "Input Validation": [
-    "Why Validation is Needed",
-    "Recovering from Invalid Input",
-    "Common Validation Checks",
+  "5. Input Validation": [
+    "5.1 Why Validation is Needed",
+    "5.2 Recovering from Invalid Input",
+    "5.3 Common Validation Checks",
+    "5.4 Entire Chapter"
+  ],
+
+  "6. Testing and Debugging": [
+    "6.1 Bugs and Debugging",
+    "6.2 Types of Program Errors",
+    "6.3 Designing Test Cases",
+    "6.4 Common Debugging Techniques",
     "Entire Chapter"
   ],
 
-  "Testing and Debugging": [
-    "Bugs and Debugging",
-    "Types of Program Errors",
-    "Designing Test Cases",
-    "Common Debugging Techniques",
+  "7. Algorithm Design": [
+    "7.1 Introduction to Algorithm Design",
+    "7.2 Decomposition",
+    "7.3 Generalisation",
+    "7.4 Common Problems and Solutions",
     "Entire Chapter"
   ],
 
-  "Algorithm Design": [
-    "Introduction to Algorithm Design",
-    "Decomposition",
-    "Generalisation",
-    "Common Problems and Solutions",
+  "8. Software Engineering": [
+    "8.1 Stages in Developing a Program",
+    "8.2 Alternative Methodologies",
     "Entire Chapter"
   ],
 
-  "Software Engineering": [
-    "Stages in Developing a Program",
-    "Alternative Methodologies",
+  "9. Spreadsheets": [
+    "9.1 Understanding Spreadsheets",
+    "9.2 Logical Operators and Functions",
+    "9.3 Mathematical and Statistical Operators and Functions",
+    "9.4 Text Functions",
+    "9.5 Lookup Functions",
+    "9.6 Date Functions",
+    "9.7 Goal Seek",
+    "9.8 Conditional Formatting",
     "Entire Chapter"
   ],
 
-  "Spreadsheets": [
-    "Understanding Spreadsheets",
-    "Logical Operators and Functions",
-    "Mathematical and Statistical Operators and Functions",
-    "Text Functions",
-    "Lookup Functions",
-    "Date Functions",
-    "Goal Seek",
-    "Conditional Formatting",
+  "10. Networking": [
+    "10.1 Introduction to Computer Networks",
+    "10.2 Types of Computer Networks",
+    "10.3 Protocols and Error Detection",
+    "10.4 Home Networks and the Internet",
     "Entire Chapter"
   ],
 
-  "Networking": [
-    "Introduction to Computer Networks",
-    "Types of Computer Networks",
-    "Protocols and Error Detection",
-    "Home Networks and the Internet",
+  "11. Security and Privacy": [
+    "11.1 Defining Security and Privacy",
+    "11.2Threats",
+    "11.3 Defences",
+    "11.4 Analysis",
     "Entire Chapter"
   ],
 
-  "Security and Privacy": [
-    "Defining Security and Privacy",
-    "Threats",
-    "Defences",
-    "Analysis",
+  "12. Intellectual Property": [
+    "12.1 Introduction to Intellectual Property",
+    "12.2 Copyright",
+    "12.3 Software Licenses",
+    "12.4 Software Piracy",
+    "12.5 Copyright Infringement",
+    "12.6 Entire Chapter"
+  ],
+
+  "13. Impact of Computing": [
+    "13.1 Impact of Computing on Different Industries",
+    "13.2 Proliferation of Falsehoods",
     "Entire Chapter"
   ],
 
-  "Intellectual Property": [
-    "Introduction to Intellectual Property",
-    "Copyright",
-    "Software Licenses",
-    "Software Piracy",
-    "Copyright Infringement",
-    "Entire Chapter"
-  ],
-
-  "Impact of Computing": [
-    "Impact of Computing on Different Industries",
-    "Proliferation of Falsehoods",
-    "Entire Chapter"
-  ],
-
-  "Emerging Technologies": [
-    "Artificial Intelligence",
-    "Other Emerging Technologies",
+  "14. Emerging Technologies": [
+    "14.1 Artificial Intelligence",
+    "14.2 Other Emerging Technologies",
     "Entire Chapter"
   ]
 }
@@ -173,17 +173,17 @@ class study_task:
     Parameters:
     z: user confidence in subtopic
     """
-    def __init__(self,x:int,y:int,z:int,comments=None):
+    def __init__(self,x:int,y:int,z:int,comments:str):
         self.x = x
         self.y=y
         self.z = z
         self.comments = comments
     def getitem(self):
-        return [chapters[self.x],subtopics[chapters[self.x]][self.y],self.z]
-task_list = [study_task(0,0,5).getitem()]
+        return [chapters[self.x],subtopics[chapters[self.x]][self.y],self.z,self.comments]
+task_list = [study_task(0,0,5,'').getitem()]
 if 'tasklist' not in st.session_state:
     print('activate first')
-    st.session_state['tasklist'] = [study_task(0,0,5).getitem()]
+    st.session_state['tasklist'] = [study_task(0,0,5,'').getitem()]
 else:
     print('activate second')
     task_list = st.session_state['tasklist']
@@ -241,7 +241,7 @@ with col2:
             changed = False
             for i in range(len(task_list)):
                 if task_list[i][0] != None:
-                    temp.append([task_list[i][0],task_list[i][1],task_list[i][2]]) #Matthias you can optimize this
+                    temp.append([task_list[i][0],task_list[i][1],task_list[i][2],task_list[i][3]]) #Matthias you can optimize this
             task_list = temp
             for i in range(len(task_list)):
                 task_obj_list.append(st.empty())
@@ -257,6 +257,7 @@ with col2:
                         else:
                             task_list[i][1] = st.selectbox("Topic",subtopics[task_list[i][0]],key=f'tasklist_1_{i}')
                         task_list[i][2] = st.slider("How confident are you in the topic?",0,10,5,key=f'tasklist_2_{i}')
+                        task_list[i][3] = st.text_area("Other comments",key=f"tasklist_3_{i}")
                     with sub2:
                         if st.button('❌',key=f'task_delete_{i}'):
                             #print("Lenght of things",task_list)
@@ -270,10 +271,10 @@ with col2:
             st.session_state['tasklist'] = task_list
             if st.button('Add task'):
                 if len(task_list) == 0:
-                    task_list = [study_task(0,0,5).getitem()]
+                    task_list = [study_task(0,0,5,'').getitem()]
                 else:
                     #print('THIS SHOULD NOT HAPPEN')
-                    task_list.append(study_task(chapters.index(task_list[-1][0]),subtopics[task_list[-1][0]].index(task_list[-1][1]),5).getitem())
+                    task_list.append(study_task(chapters.index(task_list[-1][0]),subtopics[task_list[-1][0]].index(task_list[-1][1]),5,'').getitem())
                 st.session_state['tasklist'] = task_list
                 st.rerun()
             if st.button("Create study plan!"):
