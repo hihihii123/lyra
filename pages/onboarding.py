@@ -3,6 +3,7 @@ import streamlit_extras
 from streamlit_extras.stylable_container import stylable_container
 st.set_page_config(page_title="Onboarding",layout='wide')
 
+# Background colour
 st.markdown("""
 <style>
 .stApp{
@@ -11,6 +12,7 @@ st.markdown("""
 </style>
 
 """,unsafe_allow_html=True)
+
 
 col1,col2,col3, = st.columns([2,10,2])
 with col2:
@@ -40,7 +42,7 @@ with col2:
                     }
             </style>
             """,unsafe_allow_html=True)
-        with stylable_container(key="goback",css_styles="""
+        with stylable_container(key="goback",css_styles=""" 
 {
                     flex:auto;
                     height:500px;

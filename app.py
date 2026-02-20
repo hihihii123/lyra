@@ -4,7 +4,9 @@ from PIL import Image
 from streamlit_extras.stylable_container import stylable_container
 im = Image.open('favicon.jpeg')
 newuser = False
-st.set_page_config(page_title="Lyra", page_icon=im,layout='wide')
+
+# Background colour + title
+st.set_page_config(page_title="Lyra", page_icon=im,layout="wide")
 st.markdown("""
 <style>
 .stApp{
@@ -13,9 +15,9 @@ st.markdown("""
 </style>
 
 """,unsafe_allow_html=True)
-## -------------------------------------------------------------------------------------------------
-## Not logged in -----------------------------------------------------------------------------------
-## -------------------------------------------------------------------------------------------------
+
+
+## NOT LOGGED IN
 col1,col2,col3, = st.columns([7,2,2])
 
 with col1:
@@ -31,14 +33,14 @@ with col1:
                     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
                     h1{
                     text-align:left;
-                    font-family: 'Comic';sans-serif;
+                    font-family: 'Comic', sans-serif;
                     }
                     #id2{
                     color: white;
                     }
                     p{
                     text-align:left;
-                    font-family: 'Inter';sans-serif;
+                    font-family: 'Inter', sans-serif;
                     }
                     #id1{
                     color: white;
@@ -59,7 +61,6 @@ with col1:
                 col2,col1 = st.columns([7,1])
 
                 # Authentication form layout
-                
                 do_you_have_an_account = col2.selectbox(label='Do you have an account?',options=('Yes','No','I forgot my password'),width=200)
                 auth_form = col2.form(key='Authentication form',clear_on_submit=False,width='stretch')
                 email = auth_form.text_input(label='Email')
@@ -90,10 +91,9 @@ with col1:
                     auth_notification.warning(st.session_state.auth_warning)
                     del st.session_state.auth_warning
 
-## -------------------------------------------------------------------------------------------------
-## Logged in --------------------------------------------------------------------------------------
-## -------------------------------------------------------------------------------------------------
+## LOGGED IN
             else:
+                # Switches pages 
                 if newuser:
                     st.switch_page("./pages/onboarding.py")
                 else:

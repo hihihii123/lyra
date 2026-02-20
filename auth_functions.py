@@ -4,22 +4,20 @@ import streamlit as st
 
 
 
-## -------------------------------------------------------------------------------------------------
-## Firebase Auth API -------------------------------------------------------------------------------
-## -------------------------------------------------------------------------------------------------
+## FIREBASE AUTH API
 
 def sign_in_with_email_and_password(email, password):
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY']) # from secrets.toml
     headers = {"content-type": "application/json; charset=UTF-8"}
-    data = json.dumps({"email": email, "password": password, "returnSecureToken": True}) # prepares info (email&password) to verify
-    request_object = requests.post(request_ref, headers=headers, data=data) # sending info
-    raise_detailed_error(request_object) # is a user defined function
-    return request_object.json() # returns a .json file (?)
+    data = json.dumps({"email": email, "password": password, "returnSecureToken": True}) # Prepares info (email&password) to verify
+    request_object = requests.post(request_ref, headers=headers, data=data) # Sending info to firebase
+    raise_detailed_error(request_object) # (is a user defined function)
+    return request_object.json() # Returns a dict/list
 
-def get_account_info(id_token): # checks if user is valid
+def get_account_info(id_token): # Checks if user is valid
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8"}
-    data = json.dumps({"idToken": id_token})  # proof user has signed in
+    data = json.dumps({"idToken": id_token})  # Proof user has signed in
     request_object = requests.post(request_ref, headers=headers, data=data) 
     raise_detailed_error(request_object)
     return request_object.json()
@@ -27,7 +25,7 @@ def get_account_info(id_token): # checks if user is valid
 def send_email_verification(id_token):
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8"}
-    data = json.dumps({"requestType": "VERIFY_EMAIL", "idToken": id_token}) # calls on firebase function
+    data = json.dumps({"requestType": "VERIFY_EMAIL", "idToken": id_token}) # Calls on a firebase function to verify
     request_object = requests.post(request_ref, headers=headers, data=data)
     raise_detailed_error(request_object)
     return request_object.json()
@@ -40,7 +38,7 @@ def send_password_reset_email(email):
     raise_detailed_error(request_object)
     return request_object.json()
 
-def create_user_with_email_and_password(email, password): # sign up func
+def create_user_with_email_and_password(email, password): # Sign up function
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8" }
     data = json.dumps({"email": email, "password": password, "returnSecureToken": True})
@@ -64,13 +62,12 @@ def getUserId():
 
 def raise_detailed_error(request_object):
     try:
-        request_object.raise_for_status() # checks status code; 200-299 okay, 400-599 no
+        request_object.raise_for_status() # Checks status code; 200-299 okay, 400-599 no
     except requests.exceptions.HTTPError as error:
         raise requests.exceptions.HTTPError(error, request_object.text)
 
-## -------------------------------------------------------------------------------------------------
-## Authentication functions ------------------------------------------------------------------------
-## -------------------------------------------------------------------------------------------------
+
+## AUTHENTIFICATION FUNCTIONS
 
 def sign_in(email:str, password:str) -> None:
     try:
@@ -104,8 +101,7 @@ def sign_in(email:str, password:str) -> None:
 
 def create_account(email:str, password:str) -> None:
     try:
-        # Create account (and save id_token)
-        id_token = create_user_with_email_and_password(email,password)['idToken']
+        id_token = create_user_with_email_and_password(email,password)['idToken'] # Create account (and save id_token)
 
         # Create account and send email verification
         send_email_verification(id_token)
@@ -144,7 +140,7 @@ def reset_password(email:str) -> None:
 
 def sign_out() -> None:
     st.session_state.clear()
-    st.session_state.auth_success = 'You have successfully signed out'
+    st.session_state.auth_success = 'You have successfully signed out' # Message displayed in home page after signing out
 
 
 def delete_account(password:str) -> None:
