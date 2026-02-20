@@ -1,6 +1,6 @@
 import os
 from functools import lru_cache
-
+import streamlit as st
 from langchain.agents import create_agent
 from langchain.agents.middleware import ModelRequest, dynamic_prompt
 from langchain_chroma import Chroma
@@ -36,7 +36,7 @@ DEFAULT_CORPUS = ["""You should give your answer in the following format: [{
 
 
 def _require_openai_api_key() -> str:
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = st.secrets["OPENAI_API_KEY"]
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is not set")
     return api_key
@@ -80,10 +80,8 @@ def _get_qa_agent():
     model = ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
     return create_agent(model, tools=[], middleware=[prompt_with_context])
 
-
 def _extract_assistant_message(result) -> str:
     messages = result.get("messages", []) if isinstance(result, dict) else []
-
     for message in reversed(messages):
         content = getattr(message, "content", "")
         if isinstance(content, str) and content.strip():
