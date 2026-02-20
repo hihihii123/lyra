@@ -18,6 +18,7 @@ st.markdown("""
 
 
 ## NOT LOGGED IN
+#adapted from some streamlit help
 col1,col2,col3, = st.columns([7,2,2])
 
 with col1:

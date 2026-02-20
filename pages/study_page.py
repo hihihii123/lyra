@@ -164,7 +164,7 @@ def submit_plan():
     _,col1,col2,_ = st.columns([2,1,1,2])
     with col1:
       if st.button("Yes!"):
-          st.write(invoke_qa_agent(task_list))
+          st.switch_page("./pages/interface_page.py")
     with col2:
       if st.button("No"):
           st.rerun()
@@ -185,6 +185,7 @@ class study_task:
     def getitem(self):
         return [chapters[self.x],subtopics[chapters[self.x]][self.y],self.z,self.comments]
 task_list = [study_task(0,0,5,'').getitem()]
+print('inside',st.session_state['tasklist'])
 if 'tasklist' not in st.session_state:
     print('activate first')
     st.session_state['tasklist'] = [study_task(0,0,5,'').getitem()]
@@ -261,7 +262,7 @@ with col2:
                         else:
                             task_list[i][1] = st.selectbox("Topic",subtopics[task_list[i][0]],key=f'tasklist_1_{i}')
                         task_list[i][2] = st.slider("How confident are you in the topic?",0,10,5,key=f'tasklist_2_{i}')
-                        task_list[i][3] = st.text_area("Other comments",key=f"tasklist_3_{i}")
+                        task_list[i][3] = st.text_area("Other comments",value=task_list[i][3],key=f"tasklist_3_{i}")
                     with sub2:
                         if st.button('❌',key=f'task_delete_{i}'):
                             #print("Lenght of things",task_list)
