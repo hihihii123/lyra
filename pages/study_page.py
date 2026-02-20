@@ -3,7 +3,10 @@ import streamlit_extras
 import time
 from streamlit_extras.stylable_container import stylable_container
 st.set_page_config(page_title="Onboarding",layout='wide')
-
+class task:
+    chapter: int
+    topic: int
+    confidence: int
 
 try:
     var = st.session_state.user_info

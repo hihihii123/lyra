@@ -12,13 +12,12 @@ DEFAULT_CORPUS = ["""You should give your answer in the following format: [{
         "startdate": "xx"
     },
     "description": "xxx",
-    "chapterscovered": [
-        numbershere
-    ],
+    "confidencelevel": num,
     "tasks": [
         {
             "name": "name",
-            "topic": "topiccovered",
+            "chapter": num,
+            "topic": num,
             "duedate": "xxx",
             "description": "blahblahblah",
             "startdate": "xxx",
@@ -91,8 +90,15 @@ def _extract_assistant_message(result) -> str:
 
     return str(result)
 
+class task:
+    chapter: int
+    topic: int
+    confidence: int
 
-def invoke_qa_agent(prompt: str) -> str:
+def invoke_qa_agent(xx: list) -> str:
+    prompt = ""
+    for n,x in enumerate(xx):
+        prompt += f"task no. {n+1}: chapter: {x.chapter}, topic: {x.topic}, confidence: {x.confidence}.\n"
     llm = _get_llm()
     system_message = _build_system_prompt(prompt)
     result = llm.invoke(
