@@ -3,6 +3,7 @@ import streamlit_extras
 import time
 from streamlit_extras.stylable_container import stylable_container
 st.set_page_config(page_title="Onboarding",layout='wide')
+from backend import invoke_qa_agent
 class task:
     chapter: int
     topic: int
@@ -163,7 +164,7 @@ def submit_plan():
     _,col1,col2,_ = st.columns([2,1,1,2])
     with col1:
       if st.button("Yes!"):
-          pass
+          st.write(invoke_qa_agent(task_list))
     with col2:
       if st.button("No"):
           st.rerun()

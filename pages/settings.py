@@ -6,15 +6,7 @@ import auth_functions
 col1,col2 = st.columns([1,20])
 
 with col1:
-    with stylable_container(key="goback",css_styles="""
-button {
-                            background-color: Tomato;
-                            }
-button:hover {
-                            background-color: green;
-                            }
-                     """):
-        m = st.button('go back')
+        m = st.button('⬅️')
         if m:
             st.switch_page('pages/home.py')
       

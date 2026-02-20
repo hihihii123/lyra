@@ -90,15 +90,11 @@ def _extract_assistant_message(result) -> str:
 
     return str(result)
 
-class task:
-    chapter: int
-    topic: int
-    confidence: int
 
 def invoke_qa_agent(xx: list) -> str:
     prompt = ""
     for n,x in enumerate(xx):
-        prompt += f"task no. {n+1}: chapter: {x.chapter}, topic: {x.topic}, confidence: {x.confidence}.\n"
+        prompt += f"task no. {n+1}: chapter: {x[0]}, topic: {x[1]}, confidence: {x[2]}, comments: {x[3]}.\n"
     llm = _get_llm()
     system_message = _build_system_prompt(prompt)
     result = llm.invoke(

@@ -8,8 +8,9 @@ try:
     var = st.session_state.user_info
 except Exception:
     st.switch_page('app.py')
-    
-st.balloons()
+if not "balon" in st.session_state:
+    st.balloons()
+    st.session_state['balon'] = 'bleh'
 
 recent_study_things = [] #to fill up
 
