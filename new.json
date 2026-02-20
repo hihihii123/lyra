@@ -1,0 +1,34 @@
+[{
+    "name": "name",
+    "dates": {
+        "duedate": "xx",
+        "startdate": "xx"
+    },
+    "description": "xxx",
+    "chapterscovered": [
+        0,2,3,4
+    ],
+    "tasks": [
+        {
+            "name": "name",
+            "topic": "topiccovered",
+            "duedate": "xxx",
+            "description": "blahblahblah",
+            "startdate": "xxx",
+            "completionstatus": true,
+            "completiontime": "xxx"
+        },
+        {
+            "name": "name",
+            "topic": "topiccovered",
+            "duedate": "xxx",
+            "description": "blahblahblah",
+            "startdate": "xxx",
+            "completionstatus": false,
+            "completiontime": "xxx"
+        }
+    ],
+    "completionstatus": false,
+    "comments": "xxxx"
+
+}]
