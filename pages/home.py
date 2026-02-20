@@ -2,6 +2,8 @@ import streamlit as st
 from auth_functions import getUserId
 from streamlit_extras.stylable_container import stylable_container
 from backend import invoke_qa_agent
+st.set_page_config(page_title="Home",layout='wide')
+
 
 
 try:

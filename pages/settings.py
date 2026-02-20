@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_extras.stylable_container import stylable_container
 import auth_functions
+st.set_page_config(page_title="Settings",layout='wide')
 
 
 col1,col2 = st.columns([1,20])

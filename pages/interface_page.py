@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_extras
 from streamlit_extras.stylable_container import stylable_container
 from backend import marco_invoke_qa_agent
-st.set_page_config(page_title="Onboarding",layout='wide')
+st.set_page_config(page_title="Interface",layout='wide')
 
 # Background colour
 st.markdown("""
@@ -54,6 +54,10 @@ with col2:
                     }
                      """):
             if st.button("Send prompt"):
+                #adapted from https://discuss.streamlit.io/t/how-to-show-local-gif-image/3408
+                gif = st.empty()
+                gif.markdown("![GIF not playing :()](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
                 string = marco_invoke_qa_agent(st.session_state['tasklist'],old_tasks="No old tasks")
                 st.write(string)
+                gif.empty()
             st.text('')

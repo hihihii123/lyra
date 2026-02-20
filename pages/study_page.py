@@ -185,13 +185,14 @@ class study_task:
     def getitem(self):
         return [chapters[self.x],subtopics[chapters[self.x]][self.y],self.z,self.comments]
 task_list = [study_task(0,0,5,'').getitem()]
-print('inside',st.session_state['tasklist'])
 if 'tasklist' not in st.session_state:
     print('activate first')
     st.session_state['tasklist'] = [study_task(0,0,5,'').getitem()]
 else:
     print('activate second')
     task_list = st.session_state['tasklist']
+print('inside',st.session_state['tasklist'])
+
 st.markdown("""
 <style>
 .stApp{
