@@ -11,10 +11,7 @@ st.markdown("""
             background-image: linear-gradient(to bottom,#CD63A9B3,#2A5B9B)
             }
 </style>
-class task:
-    chapter: int
-    topic: int
-    confidence: int
+
 """,unsafe_allow_html=True)
 ## -------------------------------------------------------------------------------------------------
 ## Not logged in -----------------------------------------------------------------------------------
