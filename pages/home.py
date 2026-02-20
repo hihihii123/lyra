@@ -1,7 +1,7 @@
 import streamlit as st
 from auth_functions import getUserId
 from streamlit_extras.stylable_container import stylable_container
-
+from backend import invoke_qa_agent
 
 
 try:
@@ -43,7 +43,14 @@ with col1:
                                 background-color:#91b5d9;
                                 }
                                 """):
-             st.write("okay you were studying thats goos")
+             st.write("okay you were studying thats good")
+with col2:
+    #temp to test integration
+    ohmydays = st.text_input("input smth ig")
+    if ohmydays:
+         oh = invoke_qa_agent(ohmydays)
+         st.text(oh)
+         
 
 with col3:
         if st.button("⚙️"):
