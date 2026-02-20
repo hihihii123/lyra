@@ -153,6 +153,17 @@ subtopics = {
   ]
 }
 task_obj_list = []
+#matthias look here
+@st.dialog("Create study plan?",dismissible=False)
+def submit_plan():
+    st.write("Do you want to create study plan?")
+    _,col1,col2,_ = st.columns([2,1,1,2])
+    with col1:
+      if st.button("Yes!"):
+          pass
+    with col2:
+      if st.button("No"):
+          st.rerun()
 
 
 
@@ -240,7 +251,7 @@ with col2:
                     with sub1:
                         task_list[i][0] = st.selectbox("Chapter",chapters,index=chapters.index(task_list[i][0]),key=f'tasklist_0_{i}')
                         #print('weirdlist',subtopics[task_list[i][0]])
-                        print('values',sum(subtopics.values(),[]))
+                        #print('values',sum(subtopics.values(),[]))
                         if task_list[i][1] in subtopics[task_list[i][0]]:
                             task_list[i][1] = st.selectbox("Topic",subtopics[task_list[i][0]],index=subtopics[task_list[i][0]].index(task_list[i][1]),key=f'tasklist_1_{i}')
                         else:
@@ -248,8 +259,8 @@ with col2:
                         task_list[i][2] = st.slider("How confident are you in the topic?",0,10,5,key=f'tasklist_2_{i}')
                     with sub2:
                         if st.button('❌',key=f'task_delete_{i}'):
-                            print("Lenght of things",task_list)
-                            print("I",i)
+                            #print("Lenght of things",task_list)
+                            #print("I",i)
                             task_list[i][0] = task_list[i][1] = None
                             changed=True
             if changed:
@@ -261,14 +272,18 @@ with col2:
                 if len(task_list) == 0:
                     task_list = [study_task(0,0,5).getitem()]
                 else:
-                    print('THIS SHOULD NOT HAPPEN')
+                    #print('THIS SHOULD NOT HAPPEN')
                     task_list.append(study_task(chapters.index(task_list[-1][0]),subtopics[task_list[-1][0]].index(task_list[-1][1]),5).getitem())
                 st.session_state['tasklist'] = task_list
                 st.rerun()
+            if st.button("Create study plan!"):
+                submit_plan()
+                
+                
           
 
 
-            print("WHATTT",task_list)
+            #print("WHATTT",task_list)
 
             
 
