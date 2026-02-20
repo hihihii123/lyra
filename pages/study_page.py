@@ -63,7 +63,7 @@ subtopics = {
     "4.2 Defining Problems",
     "4.3 Installing Python",
     "4.4 Comments",
-    "4.5Literals and Variables",
+    "4.5 Literals and Variables",
     "4.6 Functions, Methods and Operators",
     "4.7 Data Types",
     "4.8 Input and Output",
@@ -82,7 +82,7 @@ subtopics = {
     "5.1 Why Validation is Needed",
     "5.2 Recovering from Invalid Input",
     "5.3 Common Validation Checks",
-    "5.4 Entire Chapter"
+    "Entire Chapter"
   ],
 
   "6. Testing and Debugging": [

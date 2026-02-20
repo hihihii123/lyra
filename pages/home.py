@@ -48,6 +48,8 @@ with col1:
                                 }
                                 """):
              st.write("okay you were studying thats good")
+    if st.button('switch to temppage'):
+         st.switch_page('./pages/temppage.py')
 with col2:
     #temp to test integration
     ohmydays = st.text_input("input smth ig")

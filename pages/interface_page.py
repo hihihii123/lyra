@@ -1,7 +1,10 @@
 import streamlit as st
 import streamlit_extras
 from streamlit_extras.stylable_container import stylable_container
+import random
+import json
 from backend import marco_invoke_qa_agent
+from pages.temppage import make_nice_task
 st.set_page_config(page_title="Interface",layout='wide')
 
 # Background colour
@@ -56,8 +59,12 @@ with col2:
             if st.button("Send prompt"):
                 #adapted from https://discuss.streamlit.io/t/how-to-show-local-gif-image/3408
                 gif = st.empty()
-                gif.markdown("![GIF not playing :()](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
+                txt = st.empty()
+                txt.write("Loading... Here's a GIF while waiting")
+                selected = random.choice(['https://media.tenor.com/tpw97n05O70AAAAi/vacameme129.gif','https://media1.tenor.com/m/byY2-DioMQ4AAAAd/quirky-clown-bread-join-voice-call-vc.gif','https://media1.tenor.com/m/lfDATg4Bhc0AAAAC/happy-cat.gif','https://media1.tenor.com/m/fitGu2TwtHoAAAAd/cat-hyppy.gif'])
+                gif.markdown(f"![GIF not playing :()]({selected})")
                 string = marco_invoke_qa_agent(st.session_state['tasklist'],old_tasks="No old tasks")
                 st.write(string)
                 gif.empty()
-            st.text('')
+                txt.empty()
+                make_nice_task(string)                
