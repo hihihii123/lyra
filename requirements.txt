@@ -3,6 +3,8 @@ requests==2.31.0
 streamlit_extras
 openai
 langchain
+langchain.agents
+langchain.agents.middleware
 langchain-openai
 langchain-chroma
 langchain-community
