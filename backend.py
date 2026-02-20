@@ -72,7 +72,7 @@ def _build_system_prompt(user_prompt: str) -> str:
 @lru_cache(maxsize=1)
 def _get_llm():
     _require_openai_api_key()
-    return ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
+    return ChatOpenAI(model="gpt-5-nano", temperature=0.2)
 
 def _extract_assistant_message(result) -> str:
     messages = result.get("messages", []) if isinstance(result, dict) else []
