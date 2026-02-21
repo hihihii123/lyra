@@ -51,9 +51,7 @@ with pdfplumber.open("resources/Computing Textbook.pdf") as pdf:
         else:
             n += 1  
             
-
-    content_match = re.compile(r"^(\d+\.\d+)(\s+)")   # + is one or more of \d=int, \s=char
-    objective_match = re.compile(r"^\d\.\d+\.\d+")
+    objective_match = re.compile(r"\d+\.\d+\.\d+\s+.+")  # + is one or more of \d=int, \s=char
 
     for page in pdf.pages[7:]:
         text = page.extract_text(x_tolerance=6, y_tolerance=6) or ""
@@ -67,27 +65,26 @@ with pdfplumber.open("resources/Computing Textbook.pdf") as pdf:
            
             for chapter in chapters:
                 for sub in chapter["subtopics"]:
-                    if sub["name"] in t: # might be a problem
+                    if sub["name"] in t:
                         current_subtopic = sub
                         collect_objectives = False
                         continue
 
-            # # Check if is learning outcomes
-            # if re.search(r"LLEEAARRNNIINNGG\s+OOUUTTCCOOMMEESS", t):
-            #     print("LLEEAARRNNIINNGG\s+OOUUTTCCOOMMEESS found")
-            #     collect_objectives = True
+            # Check if is learning outcomes
+            if "LLEEAARRNNIINNGG OOUUTTCCOOMMEESS" in t:
+                collect_objectives = True
                 
-            # print(collect_objectives, objective_match.search(t), t)
-            # if collect_objectives:  # Numbered objective
-            #     if re.search(objective_match,t):
-            #         if current_subtopic:
-            #             current_subtopic["objectives"].append(t)
-            # else:
-            #     collect_objectives = False  # stop collecting 
+            if collect_objectives:  # Numbered objective
+                if objective_match.search(t):
+                    if current_subtopic:
+                        current_subtopic["objectives"].append(objective_match.search(t).group(0))
+                        
+                else:
+                    collect_objectives = False  # stop collecting 
 
             if current_subtopic:
                 current_subtopic["content"].append(t)
-        # print(text)
+        
 
 with open("resources/DATA.json", "w", encoding="utf-8") as fout:
     json.dump(chapters, fout, indent=2, ensure_ascii=False)

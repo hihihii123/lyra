@@ -18,7 +18,9 @@
       },
       {
         "name": "1.2 Units of Data",
-        "objectives": [],
+        "objectives": [
+          "1.1.1 Perform calculations using bits, bytes, kilobytes, kibibytes, megabytes, mebibytes, gigabytes, gibibytes, terabytes, tebibytes, petabytes and pebibytes."
+        ],
         "content": [
           "1.2 Units of Data LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.1.1 Perform calculations using bits, bytes, kilobytes, kibibytes, megabytes, mebibytes, gigabytes, gibibytes, terabytes, tebibytes, petabytes and pebibytes.",
           "S p is i r n t o o c d e d u e c a e fi n d c e a o t h m a o , p w a u n d t e i a m r t ’ a s p i o s f r u b t n a e c n i t n t i g o a n s re p p e is r c e t t s o o e f n c r t o e e m c d e .",
@@ -36,7 +38,12 @@
       },
       {
         "name": "1.3 Components of a Computer System",
-        "objectives": [],
+        "objectives": [
+          "1.1.2 Describe the function of key components of a computer system: its processor, main memory and secondary storage.",
+          "1.1.3 Describe the function of data and address buses in reading from and writing to memory.",
+          "1.1.4 Describe different input/output interfaces (USB, HDMI and PCI Express) in terms of typical applications, connectors and speed.",
+          "1.1.5 Describe the use of magnetic, optical and solid-state media for secondary storage in terms of durability, portability, typical capacities, cost and speed."
+        ],
         "content": [
           "a) 2,026 kB b) 19 GiB c) 65 MB 1.3 Components of a Computer System LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.1.2 Describe the function of key components of a computer system: its processor, main memory and secondary storage.",
           "1.1.3 Describe the function of data and address buses in reading from and writing to memory.",
@@ -163,7 +170,11 @@
       },
       {
         "name": "2.2 Understanding Number Systems and Conversion Techniques",
-        "objectives": [],
+        "objectives": [
+          "1.2.1 Represent positive whole numbers in binary form.",
+          "1.2.2 Convert positive whole numbers from one number system to another - binary, denary and hexadecimal; and describe the technique used.",
+          "2.2.1 0 1 2 3 4 5 6 7 8 9 Table 2.1 Digits of the denary number system The number system that we are most familiar with and KEY TERMS typically use is called the denary number system. It is also known as the decimal number system and is made up of 10 distinct digits. Denary number system (or decimal number system) A number system that is made up of 10 unique digits."
+        ],
         "content": [
           "2.2 Understanding Number Systems and Conversion Techniques LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.2.1 Represent positive whole numbers in binary form.",
           "1.2.2 Convert positive whole numbers from one number system to another - binary, denary and hexadecimal; and describe the technique used.",
@@ -299,7 +310,9 @@
       },
       {
         "name": "2.3 Representing Negative Numbers",
-        "objectives": [],
+        "objectives": [
+          "1.2.3 Use two’s complement for a fixed number of bits to represent both positive and negative whole numbers in binary."
+        ],
         "content": [
           "2.3 Representing Negative Numbers LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.2.3 Use two’s complement for a fixed number of bits to represent both positive and negative whole numbers in binary.",
           "So far, we have only used bits and the binary number system to represent zero and positive integers.",
@@ -333,7 +346,9 @@
       },
       {
         "name": "2.4 Representing Text",
-        "objectives": [],
+        "objectives": [
+          "1.2.4 Use the example of an 8-bit extended ASCII encoding for English text to explain how information can be represented as bits for storage or processing by a computer."
+        ],
         "content": [
           "2.4 Representing Text LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.2.4 Use the example of an 8-bit extended ASCII encoding for English text to explain how information can be represented as bits for storage or processing by a computer.",
           "F a o c r h t a ex ra t c d t a e t r a .",
@@ -426,7 +441,9 @@
       },
       {
         "name": "3.3 Logic Gates",
-        "objectives": [],
+        "objectives": [
+          "1.3.3 Draw symbols and construct truth tables for AND, OR, NOT, NAND, NOR and XOR logic gates."
+        ],
         "content": [
           "3.3 Logic Gates LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.3.3 Draw symbols and construct truth tables for AND, OR, NOT, NAND, NOR and XOR logic gates.",
           "A logic gate is an electrical circuit KEY TERMS that performs logical operations based on one or more inputs and Logic gate produces a single output. An electrical circuit that performs logical operations based on one or more inputs and produces a single output In this section, you will learn about the six basic types of logic Logical operation gates (AND, OR, NOT, NAND, NOR An operation that acts on binary inputs to produce an output and XOR) as well as their functions according to the laws of Boolean logic and applications.",
@@ -463,7 +480,11 @@
       },
       {
         "name": "3.4 Logic Circuits",
-        "objectives": [],
+        "objectives": [
+          "1.3.1 Represent logic circuits using either logic circuit diagrams or Boolean statements and convert between the two representations.",
+          "1.3.2 Construct the truth table for a given logic circuit (maximum 3 inputs) and vice versa.",
+          "3.4.1 Logic Circuit Diagrams L ci o r g cu ic i ts g ."
+        ],
         "content": [
           "3.4 Logic Circuits LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.3.1 Represent logic circuits using either logic circuit diagrams or Boolean statements and convert between the two representations.",
           "1.3.2 Construct the truth table for a given logic circuit (maximum 3 inputs) and vice versa.",
@@ -547,7 +568,11 @@
       },
       {
         "name": "3.5 Manipulating Boolean Statements",
-        "objectives": [],
+        "objectives": [
+          "1.3.4 Manipulate Boolean statements using the associative and distributive properties of certain logical operators and De Morgan’s theorem.",
+          "3.5.1 lists some common properties of AND, OR and XOR for manipulating Boolean statements.",
+          "3.5.1 Common properties of AND, OR and XOR A th n e o t D h o e u r b c l o e m N m eg o a n t i p o r n o p p e ro rt p y e f r o t r y m w a h n e i r p e u p la e t r i f n o g r m Bo in o g le t a w n o s t c a o t n e s m e e c n u t t s iv i e s DID YOU NOT operations gives back the original input: KKNNOOWW??"
+        ],
         "content": [
           "a) A+B b) A+(A B) c) A•B+B•C d) (A•B) C 3.5 Manipulating Boolean Statements LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.3.4 Manipulate Boolean statements using the associative and distributive properties of certain logical operators and De Morgan’s theorem.",
           "Like algebraic expressions, Boolean statements can be manipulated using the associative, distributive and other properties of the AND, OR and XOR operations. Table 3.5.1 lists some common properties of AND, OR and XOR for manipulating Boolean statements.",
@@ -563,7 +588,9 @@
       },
       {
         "name": "3.6 Solving System Problems",
-        "objectives": [],
+        "objectives": [
+          "1.3.5 Solve system problems using combinations of logic gates (maximum 3 inputs)."
+        ],
         "content": [
           "a) NAND is not associative, i.e., (A•B)•C≠A•(B•C) b) NOR is not associative, i.e., (A+B)+C≠A+(B+C) 4. a) By using truth tables, prove that AND is distributive, i.e., A•(B+C)=(A•B)+(A•C) b) Hence, or otherwise, prove that OR is distributive, i.e., A+(B•C)=(A+B)•(A+C) 3.6 Solving System Problems LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 1.3.5 Solve system problems using combinations of logic gates (maximum 3 inputs).",
           "Computing devices and electrical appliances perform logical decisions using logic circuits. This section introduces three applications of logic circuits that are used to make logical decisions.",
@@ -665,7 +692,10 @@
       },
       {
         "name": "4.2 Defining Problems",
-        "objectives": [],
+        "objectives": [
+          "2.1.1 For a given problem, identify and remove unnecessary details to specify the • inputs and the requirements for valid inputs • outputs and the requirements for correct outputs Algorithms can be used to solve problems. To define a p ro 1 bl I e n m pu , w ts e a n n e d e r d e q to u i s r p e e m c e if n y t i s t s f :",
+          "4.2.1 Specifying the Inputs It is not always easy to specify the inputs for a problem correctly. Good input specifications must:"
+        ],
         "content": [
           "4.2 Defining Problems LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.1.1 For a given problem, identify and remove unnecessary details to specify the • inputs and the requirements for valid inputs • outputs and the requirements for correct outputs Algorithms can be used to solve problems. To define a p ro 1 bl I e n m pu , w ts e a n n e d e r d e q to u i s r p e e m c e if n y t i s t s f :",
           "Input Processes Output Figure 4.7 Process flow in problem-solving 4.2.1 Specifying the Inputs It is not always easy to specify the inputs for a problem correctly. Good input specifications must:",
@@ -717,7 +747,10 @@
       },
       {
         "name": "4.5 Literals and Variables",
-        "objectives": [],
+        "objectives": [
+          "2.3.1 Use variables to store and retrieve values.",
+          "2.3.2 Use literals to represent values directly in code without using a variable."
+        ],
         "content": [
           "KEY TERMS Comment A piece of source code that explains the program but is ignored by Python Figure 4.16 Output in Jupyter Desktop 4.5 Literals and Variables LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.1 Use variables to store and retrieve values.",
           "2.3.2 Use literals to represent values directly in code without using a variable.",
@@ -803,7 +836,10 @@
       },
       {
         "name": "4.8 Input and Output",
-        "objectives": [],
+        "objectives": [
+          "2.3.3 Use the built-in functions: input() and print(), to perform interactive input/output using the keyboard and screen.",
+          "4.8.1 Keyboard and Screen As programmers, we can provide inputs (i.e., data for the program to process) directly in the source code as literals. However, computer users who are not programmers may not be able to edit a program’s source code. For users to name = input('Enter your name: ') provide inputs when the program is run, we can print('Hello', name) instead use the input() function. This function prompts the user to enter text, which is then Enter your name: Bala used as input for the program. Hello Bala Figure 4.51 demonstrates asking for the user’s name using input(), storing the user’s response Figure 4.51 Using the input() function using a variable, then displaying the user’s name on the screen using print()."
+        ],
         "content": [
           "4.8 Input and Output LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.3 Use the built-in functions: input() and print(), to perform interactive input/output using the keyboard and screen.",
           "4.8.1 Keyboard and Screen As programmers, we can provide inputs (i.e., data for the program to process) directly in the source code as literals. However, computer users who are not programmers may not be able to edit a program’s source code. For users to name = input('Enter your name: ') provide inputs when the program is run, we can print('Hello', name) instead use the input() function. This function prompts the user to enter text, which is then Enter your name: Bala used as input for the program. Hello Bala Figure 4.51 demonstrates asking for the user’s name using input(), storing the user’s response Figure 4.51 Using the input() function using a variable, then displaying the user’s name on the screen using print().",
@@ -821,7 +857,9 @@
       },
       {
         "name": "4.9 Booleans",
-        "objectives": [],
+        "objectives": [
+          "2.3.6 Use Boolean values with the operators: or, and, not."
+        ],
         "content": [
           "4.9 Booleans LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.6 Use Boolean values with the operators: or, and, not.",
           "A Boolean (or bool) is a special data type used to represent logic-related data. Unlike other data types, there are only two valid bool values: True and False.",
@@ -855,7 +893,11 @@
       },
       {
         "name": "4.10 Integers and Floating-Point Numbers",
-        "objectives": [],
+        "objectives": [
+          "2.3.7 Use integer and floating-point values with appropriate operators and built-in functions (limited to those mentioned in the Quick Reference Guide) to perform:",
+          "2.3.5 Use the import command to load and make additional variables and functions available for use.",
+          "4.10.1 Integer Literals Integers (or int) comprise of positive and negative whole 2024 numbers as well as zero. Its literal format is an optional sign 0 (+ or -) followed by the number’s digits written out. -1965 Figure 4.57 shows some examples of valid int literals."
+        ],
         "content": [
           "4.10 Integers and Floating-Point Numbers LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.7 Use integer and floating-point values with appropriate operators and built-in functions (limited to those mentioned in the Quick Reference Guide) to perform:",
           "• Addition, subtraction, multiplication, division, modulo and exponentiation • Rounding (normal, up, down, towards zero) • Calculation of square roots • Generation of ranges • Generation of random integers / floats • Conversion to and from strings 2.3.5 Use the import command to load and make additional variables and functions available for use.",
@@ -971,7 +1013,9 @@
       },
       {
         "name": "4.11 Strings",
-        "objectives": [],
+        "objectives": [
+          "2.3.8 Use string values with appropriate operators, built-in functions and methods (limited to those mentioned in the Quick Reference Guide) to perform:"
+        ],
         "content": [
           "Input Output • a: length of triangle’s side • Length of triangle’s hypotenuse obtained by • b: length of triangle’s side Pythagoras’s formula c = √a2+b2, rounded to 2 decimal places Table 4.31 Input and output requirements for hypotenuse calculation problem (a and b should be provided as inputs by the user and converted to floats.) 4.11 Strings LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.8 Use string values with appropriate operators, built-in functions and methods (limited to those mentioned in the Quick Reference Guide) to perform:",
           "• Concatenation and repetition • Extraction of characters and substrings (i.e., indexing and slicing) • Conversion to upper and/or lower case • Conversion of single characters to and from ASCII • Testing of whether characters are letters only, lower-case letters only, upper-case letters only, digits only, spaces only and/or alphanumeric • Testing of whether the string contains a substring • Testing of whether the string starts with and/or ends with a substring • Searching for the location of a substring • Splitting of string into list of substrings based on either whitespace or a given delimiter • Calculation of length • Output formatting A string (or str) is used to represent text in Python. KEY TERMS The name “string” is shorthand for the phrase “string of characters/letters”.",
@@ -1070,7 +1114,9 @@
       },
       {
         "name": "4.12 Lists",
-        "objectives": [],
+        "objectives": [
+          "2.3.9 Use list values with appropriate operators, built-in functions and methods (limited to those mentioned in the Quick Reference Guide) to perform:"
+        ],
         "content": [
           "4.12 Lists LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.9 Use list values with appropriate operators, built-in functions and methods (limited to those mentioned in the Quick Reference Guide) to perform:",
           "• Concatenation and repetition • Extraction of single items and subset of items (i.e., indexing and slicing) • Testing of whether an item is in the list • Calculation of length • Calculation of sum, minimum value and maximum value (provided the list items are all integer or floating-point values) A list is an ordered sequence of changeable values.",
@@ -1139,7 +1185,9 @@
       },
       {
         "name": "4.13 Dictionaries",
-        "objectives": [],
+        "objectives": [
+          "2.3.10 Use dictionary values with appropriate operators to perform dictionary insertion, query, lookup and deletion."
+        ],
         "content": [
           "name1 = 'Alex' name2 = 'Bala' name3 = 'Siti' names = [name1, name2, name3] print('name2' in names) 4.13 Dictionaries LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.10 Use dictionary values with appropriate operators to perform dictionary insertion, query, lookup and deletion.",
           "o A f d k ic e t y i - o v n al a u r e y p (o a r ir d s i .",
@@ -1173,7 +1221,11 @@
       },
       {
         "name": "4.14 Control Flow",
-        "objectives": [],
+        "objectives": [
+          "2.2.1 Interpret flowcharts to understand the sequence, selection and iteration constructs.",
+          "2.3.11 Use the if, elif and else keywords to implement selection constructs.",
+          "2.3.12 Use the for and while keywords to implement iteration constructs."
+        ],
         "content": [
           "4.14 Control Flow LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.2.1 Interpret flowcharts to understand the sequence, selection and iteration constructs.",
           "2.3.11 Use the if, elif and else keywords to implement selection constructs.",
@@ -1293,7 +1345,10 @@
       },
       {
         "name": "4.15 User-Defined Functions",
-        "objectives": [],
+        "objectives": [
+          "2.3.13 Write and call user-defined functions that may accept parameters and/or provide a return value.",
+          "2.3.14 Distinguish between the purpose and use of local and global variables in a program that makes use of functions."
+        ],
         "content": [
           "Input Output • password: password entered by user • “Invalid” whenever password and password_again do • password_again: password entered not match, repeated as many times as needed; “Valid” again by user when the two inputs match Table 4.50 Input and output requirements for the password input problem 4.15 User-Defined Functions LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.13 Write and call user-defined functions that may accept parameters and/or provide a return value.",
           "2.3.14 Distinguish between the purpose and use of local and global variables in a program that makes use of functions.",
@@ -1367,7 +1422,9 @@
       },
       {
         "name": "4.16 with Statements",
-        "objectives": [],
+        "objectives": [
+          "2.3.4 Use the open() built-in function as well as the read(), readline(), write() and close() methods to perform non-interactive file input/output."
+        ],
         "content": [
           "4.16 with Statements LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.3.4 Use the open() built-in function as well as the read(), readline(), write() and close() methods to perform non-interactive file input/output.",
           "In programming, we often need to make use of the computer’s limited resources. For some resources such as memory for storing variables, Python takes care of reserving and releasing memory automatically.",
@@ -1521,7 +1578,9 @@
       },
       {
         "name": "5.2 Recovering from Invalid Input",
-        "objectives": [],
+        "objectives": [
+          "2.4.6 Justify the use of data validation and identify the appropriate action to take when invalid data is encountered: asking for input again (for interactive input) or exiting the program (for non-interactive input)."
+        ],
         "content": [
           "5.2 Recovering from Invalid Input LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.4.6 Justify the use of data validation and identify the appropriate action to take when invalid data is encountered: asking for input again (for interactive input) or exiting the program (for non-interactive input).",
           "When performing data validation, there are two basic choices on what to do if the data is invalid.",
@@ -1536,7 +1595,9 @@
       },
       {
         "name": "5.3 Common Validation Checks",
-        "objectives": [],
+        "objectives": [
+          "2.4.7 Validate input data for acceptance by performing:"
+        ],
         "content": [
           "5.3 Common Validation Checks LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.4.7 Validate input data for acceptance by performing:",
           "• length check, • range check, • presence check, • format check, • existence check (i.e., checking for whether input data is already in the system), and/or • calculation of a check digit To validate input data, a number of common validation checks may be performed. Note that these validation checks are not mutually exclusive and may have some overlaps. For instance, a length check (see section 5.3.1) may also be performed as part of a format check (see section 5.3.4).",
@@ -1662,7 +1723,9 @@
       },
       {
         "name": "6.2 Types of Program Errors",
-        "objectives": [],
+        "objectives": [
+          "2.4.8 Understand and describe types of program errors: syntax, logic and run-time; and explain why they occur."
+        ],
         "content": [
           "Figure 6.1 A moth trapped in a computer was the first actual computer “bug” KEY TERMS Bug A defect in a program that causes it to behave in an unintended manner Debugging The process of identifying and removing defects from a program 6.2 Types of Program Errors LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.4.8 Understand and describe types of program errors: syntax, logic and run-time; and explain why they occur.",
           "There are three main types of program errors that cause bugs:",
@@ -1699,7 +1762,10 @@
       },
       {
         "name": "6.3 Designing Test Cases",
-        "objectives": [],
+        "objectives": [
+          "2.4.9 Design appropriate test cases to cover normal, error and boundary conditions and specify which type(s) of conditions is/are being tested for each test case.",
+          "6.3.1 Why Testing is Needed T e te o rr s o t d i r e n s t , g e ."
+        ],
         "content": [
           "6.3 Designing Test Cases LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.4.9 Design appropriate test cases to cover normal, error and boundary conditions and specify which type(s) of conditions is/are being tested for each test case.",
           "6.3.1 Why Testing is Needed T e te o rr s o t d i r e n s t , g e .",
@@ -1739,7 +1805,13 @@
       },
       {
         "name": "6.4 Common Debugging Techniques",
-        "objectives": [],
+        "objectives": [
+          "2.4.1 Produce a trace table by performing a manual dry run and inspecting the value of variables at each step of a program.",
+          "2.4.2 Inspect the value of variables at selected steps of a program by inserting print statements.",
+          "2.4.3 Locate logic errors by backtracking from a point where unexpected behaviour is observed.",
+          "2.4.4 Test programs incrementally as small additions and changes are made during development.",
+          "2.4.5 Test small parts of a program by commenting out other parts of the program that are not needed for testing."
+        ],
         "content": [
           "6.4 Common Debugging Techniques LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.4.1 Produce a trace table by performing a manual dry run and inspecting the value of variables at each step of a program.",
           "2.4.2 Inspect the value of variables at selected steps of a program by inserting print statements.",
@@ -1943,7 +2015,10 @@
       },
       {
         "name": "7.2 Decomposition",
-        "objectives": [],
+        "objectives": [
+          "2.5.2 Solve problems by breaking them down into smaller and more manageable parts (modular approach).",
+          "2.5.3 Solve problems by solving a small version of the problem and gradually extending the solution to bigger versions of the problem (incremental approach)."
+        ],
         "content": [
           "7.2 Decomposition LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.5.2 Solve problems by breaking them down into smaller and more manageable parts (modular approach).",
           "2.5.3 Solve problems by solving a small version of the problem and gradually extending the solution to bigger versions of the problem (incremental approach).",
@@ -2000,7 +2075,10 @@
       },
       {
         "name": "7.3 Generalisation",
-        "objectives": [],
+        "objectives": [
+          "2.5.4 Use the technique of solving many small instances of a problem manually to identify the generic steps that are needed to solve the problem in general.",
+          "2.5.5 Recognise when a new problem is similar to an existing problem that has been encountered before and adapt the corresponding solution to solve the new problem."
+        ],
         "content": [
           "7.3 Generalisation LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.5.4 Use the technique of solving many small instances of a problem manually to identify the generic steps that are needed to solve the problem in general.",
           "2.5.5 Recognise when a new problem is similar to an existing problem that has been encountered before and adapt the corresponding solution to solve the new problem.",
@@ -2044,7 +2122,9 @@
       },
       {
         "name": "7.4 Common Problems and Solutions",
-        "objectives": [],
+        "objectives": [
+          "2.5.1 Explain and use the algorithms for:"
+        ],
         "content": [
           "7.4 Common Problems and Solutions LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.5.1 Explain and use the algorithms for:",
           "• Obtaining the minimum or maximum value(s) in a list without using the min() or max() functions • Calculating the sum or average of values in a list without using the sum() function • Searching for the location(s) of an item in a list or a character in a string without using the index() or find() methods • Extracting items from a list or characters from a string based on a given criteria • Splitting a string into a list based on a given delimiter without using the split() method For generalisation, it is useful to have a catalogue or “toolbox” of common problems and solutions which can be adapted to solve similar problems. In this section, we will look at some common problems and their solutions.",
@@ -2304,7 +2384,9 @@
     "subtopics": [
       {
         "name": "8.1 Stages in Developing a Program",
-        "objectives": [],
+        "objectives": [
+          "2.6.1 Understand and describe the stages in developing a program: gather requirements, design solutions, write code, test and refine code, deploy code."
+        ],
         "content": [
           "8.1 Stages in Developing a Program LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.6.1 Understand and describe the stages in developing a program: gather requirements, design solutions, write code, test and refine code, deploy code.",
           "Software engineering is the process of designing, KEY TERMS creating, and maintaining software applications. In general, there are five stages in developing a program. Software Engineering The process of designing, creating, and This is a version of the traditional “waterfall model” maintaining software applications of software development where progress flows through multiple stages in a sequential manner and each stage is completed before moving on to the next stage, just like how a waterfall flows downward in a single direction.",
@@ -2360,7 +2442,9 @@
       },
       {
         "name": "8.2 Alternative Methodologies",
-        "objectives": [],
+        "objectives": [
+          "2.6.2 Recognise that the sequence of software development stages may not be linear, and the use of iterative development may sometimes be more appropriate."
+        ],
         "content": [
           "8.2 Alternative Methodologies LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 2.6.2 Recognise that the sequence of software development stages may not be linear, and the use of iterative development may sometimes be more appropriate.",
           "Suppose that midway through the development of Siti’s program, the librarians inform her that the l m ib a r y a r b y e w m ill u b lt e ip e le x p b a o n o d k in s g w a it n h d t i h n e t h sa e m fu e t u ti r t e le , .",
@@ -2430,7 +2514,9 @@
     "subtopics": [
       {
         "name": "9.1 Understanding Spreadsheets",
-        "objectives": [],
+        "objectives": [
+          "3.1.1 Use appropriate relative, absolute and mixed cell references in formulas so they give the correct results when copied to similar cells in a table."
+        ],
         "content": [
           "9.1 Understanding Spreadsheets LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.1.1 Use appropriate relative, absolute and mixed cell references in formulas so they give the correct results when copied to similar cells in a table.",
           "A spreadsheet is an electronic worksheet used to KEY TERMS manage and manipulate data arranged in columns and rows. Cell The space for data in a particular Columns are labelled with letters and rows with column and row of a spreadsheet numbers. The rectangular space located in a particular column and row is called a cell. Spreadsheet An electronic worksheet used to Figure 9.1 shows a typical spreadsheet with a grid of manage and manipulate data arranged cells that starts from column A and row 1 at the top- in columns and rows left corner and extends rightwards and downwards.",
@@ -2481,7 +2567,9 @@
       },
       {
         "name": "9.2 Logical Operators and Functions",
-        "objectives": [],
+        "objectives": [
+          "3.2.1 Use logical functions to perform:"
+        ],
         "content": [
           "9.2 Logical Operators and Functions LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.2.1 Use logical functions to perform:",
           "The comparison for text values is case-insensitive by default (e.g., =\"a\"=\"A\" results in TRUE). In addition, the <, <=, > and >= operators should only be used to compare values of the same type. Comparing values of different types (e.g., =\"1\"<2) may result in unexpected and misleading results.",
@@ -2521,7 +2609,9 @@
       },
       {
         "name": "9.3 Mathematical and Statistical Operators and Functions",
-        "objectives": [],
+        "objectives": [
+          "3.2.2 Use mathematical and statistical operators and functions to perform:"
+        ],
         "content": [
           "9.3 Mathematical and Statistical Operators and Functions LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.2.2 Use mathematical and statistical operators and functions to perform:",
           "• Addition, subtraction, multiplication, division, modulo or exponentiation • Rounding (normal, up, down) • Calculation of square roots • Calculation of sums (normal, with condition) • Calculation of average (normal, with condition) • Calculation of median, mode, minimum value or maximum value • Calculation of a value’s rank (ascending, descending) • Calculation of n-th largest or smallest value • Counting of values (numbers only, blank only, non-blank only, with condition) • Generation of random numbers Table 9.4 shows the arithmetic operators that can be used to perform mathematical calculations in Operator Meaning a spreadsheet. (Note that while most of these operators are the same as those in Python, + Addition there is no percent operator in Python and the exponentiation operator is different. In Python, - Subtraction or Negation the % symbol is instead used to perform the modulus or remainder operation.) * Multiplication The percent operator converts the number that / Division comes before it into a percentage by dividing it t b h y e 1 s 0 a 0 m . e F o re r s e u x lt a m as p “ l = e 5 , / th 1 e 0 0 re * s 2 u 0 l ” t , o w f h “ ic = h 5 % is * 1 2 . 0” is % Percent Table 9.5 shows some common spreadsheet ^ Exponentiation functions for performing mathematical calculations and generating random numbers. Table 9.4 Arithmetic operators Function Syntax Description CEILING.MATH() =CEILING.MATH(number) Returns number rounded up to the Example: nearest whole number.",
@@ -2627,7 +2717,9 @@
       },
       {
         "name": "9.4 Text Functions",
-        "objectives": [],
+        "objectives": [
+          "3.2.3 Use text functions to perform:"
+        ],
         "content": [
           "9.4 Text Functions LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.2.3 Use text functions to perform:",
           "Spreadsheets also have many text functions to manipulate and customise text. Table 9.8 shows Operator Meaning some common functions for finding the length of some text or extracting a subset of characters & Concatenation from some text.",
@@ -2673,7 +2765,9 @@
       },
       {
         "name": "9.5 Lookup Functions",
-        "objectives": [],
+        "objectives": [
+          "3.2.4 Use lookup functions to perform:"
+        ],
         "content": [
           "9.5 Lookup Functions LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.2.4 Use lookup functions to perform:",
           "• Lookup of values from an unsorted vertical or horizontal table using exact matching • Lookup of values from a sorted vertical or horizontal table using approximate matching • Classification of values based on range using approximate matching and a secondary table • Lookup of values at the intersection of a particular row and column of a cell range • Calculation of the relative position of a value in a cell range In spreadsheets, we often need to find the row in which a particular value is located. Suppose we have a class register list with registration numbers in the first column, birthdays in the second column and student names in the third column, as shown in Figure 9.26. If we want to know the name of the student with registration number 10, we will perform the following steps:",
@@ -2735,7 +2829,9 @@
       },
       {
         "name": "9.6 Date Functions",
-        "objectives": [],
+        "objectives": [
+          "3.2.5 Use date functions to perform:"
+        ],
         "content": [
           "9.6 Date Functions LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.2.5 Use date functions to perform:",
           "• Determination of the current date or the current date and time • Calculation of the number of days between two dates Table 9.10 shows some common date functions.",
@@ -2752,7 +2848,9 @@
       },
       {
         "name": "9.7 Goal Seek",
-        "objectives": [],
+        "objectives": [
+          "3.1.2 Use the Goal Seek feature to determine the value needed in a cell for another cell to reach a specified target value."
+        ],
         "content": [
           "9.7 Goal Seek LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.1.2 Use the Goal Seek feature to determine the value needed in a cell for another cell to reach a specified target value.",
           "After defining the relationships between cells in a spreadsheet, we may wish to adjust the value in one cell so that another cell can reach a particular value (i.e., the goal). Goal Seek automatically solves the problem using a trial-and-error approach by plugging in guesses until the goal is reached.",
@@ -2775,7 +2873,9 @@
       },
       {
         "name": "9.8 Conditional Formatting",
-        "objectives": [],
+        "objectives": [
+          "3.1.3 Use the Conditional Formatting feature to automatically update cell formatting based on one or more rules."
+        ],
         "content": [
           "9.8 Conditional Formatting LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 3.1.3 Use the Conditional Formatting feature to automatically update cell formatting based on one or more rules.",
           "W us h e e fu n l t t r o y i h n i g g h to lig u h n t d im er p st o a r n ta d n a t d la e r t g a e il s s e t t o o m f a d k a e ta t , h i e t m is m oft o e r n e KEY TERMS noticeable. This can be done using a spreadsheet feature called conditional formatting. Conditional Formatting Spreadsheet feature which Conditional formatting allows a cell to automatically vary automatically formats a cell based on its appearance based on its contents, ranking, relation to given criteria the average, uniqueness or some other formula.",
@@ -2857,7 +2957,9 @@
     "subtopics": [
       {
         "name": "10.1 Introduction to Computer Networks",
-        "objectives": [],
+        "objectives": [
+          "4.1.1 Define computer networks as systems of two or more devices connected together by a transmission medium for the exchange of data."
+        ],
         "content": [
           "10.1 Introduction to Computer Networks LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 4.1.1 Define computer networks as systems of two or more devices connected together by a transmission medium for the exchange of data.",
           "A computer network is a system of two KEY TERMS or more devices that are connected by a transmission medium for the exchange of Transmission medium data. A means of connecting two or more computers together using copper cables, radio waves or light Table 10.1 shows some advantages and pulses, so that they may exchange data and interact disadvantages of a computer network. with each other.",
@@ -2870,7 +2972,12 @@
       },
       {
         "name": "10.2 Types of Computer Networks",
-        "objectives": [],
+        "objectives": [
+          "4.1.2 Describe the difference between wired and wireless transmission media and explain the factors that will determine the use of each medium.",
+          "4.1.3 Differentiate between Local Area Networks (LANs) and Wide Area Networks (WANs) based on their geographical scope.",
+          "4.1.4 Compare and contrast the client-server and peer-to-peer network architectures in terms of purpose, organisation and bandwidth.",
+          "4.1.5 Identify and state common applications of star and mesh topologies in a home network."
+        ],
         "content": [
           "10.2 Types of Computer Networks LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 4.1.2 Describe the difference between wired and wireless transmission media and explain the factors that will determine the use of each medium.",
           "4.1.3 Differentiate between Local Area Networks (LANs) and Wide Area Networks (WANs) based on their geographical scope.",
@@ -2947,7 +3054,12 @@
       },
       {
         "name": "10.3 Protocols and Error Detection",
-        "objectives": [],
+        "objectives": [
+          "4.1.6 Define protocols as standards and rules that govern communication over a network.",
+          "4.1.7 Explain that LANs typically use protocols where data is transmitted as individual packets.",
+          "4.1.8 Explain the use of parity, checksums, echo checks and automatic repeat requests for detecting errors in packet transmission.",
+          "10.3.1 Protocols and Packets Devices in a network communicate using a set of network protocols, just like how people communicate using d s c t o i a ff m n e d m re a u n rd n t s ic l a a a n n te g d u o r v a u e g le r e s s a t n h a e a n t t d w g o o s r o v k e c ."
+        ],
         "content": [
           "10.3 Protocols and Error Detection LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 4.1.6 Define protocols as standards and rules that govern communication over a network.",
           "4.1.7 Explain that LANs typically use protocols where data is transmitted as individual packets.",
@@ -3009,7 +3121,15 @@
       },
       {
         "name": "10.4 Home Networks and the Internet",
-        "objectives": [],
+        "objectives": [
+          "4.2.1 Explain that home networks are examples of LANs and that the internet is an example of a WAN that is formed by connecting many different LANs from around the world together.",
+          "4.2.2 Explain that modems are used to provide internet access by converting the protocols used by an Internet Service Provider (ISP) to the protocols used by LANs.",
+          "4.2.3 Explain that computers use network interface controllers to communicate via different transmission media.",
+          "4.2.4 Explain that Media Access Control (MAC) addresses are used by network interface controllers, network switches and wireless access points to direct data within the same LAN while Internet Protocol Version 4 (IPv4) and Internet Protocol Version 6 (IPv6) addresses are used by routers to direct data across different LANs.",
+          "4.2.5 Compare and contrast MAC, IPv4 and IPv6 addresses in terms of purpose, bit length, degree of permanence and typical representation formats.",
+          "4.2.6 Connect a router, a switch and a wireless access point to a modem correctly such that multiple computers form a LAN that can access the internet via wired and wireless transmission media.",
+          "10.4.1 How the Internet is Organised The Internet is an example of a WAN that is formed by connecting many smaller networks such as LANs together. For example, the computers you have in your home likely form a home network, which is an example of a LAN, and the server for a web site may belong to a separate LAN somewhere else in the world. To access the web site from your home computer, a request from your home computer’s LAN must be forwarded through multiple routing devices until it reaches the web site server’s LAN. After processing your request, the server’s response is then forwarded back to your home computer’s LAN in a similar way (although the exact route taken may be different)."
+        ],
         "content": [
           "10.4 Home Networks and the Internet LLEEAARRNNIINNGG OOUUTTCCOOMMEESS 4.2.1 Explain that home networks are examples of LANs and that the internet is an example of a WAN that is formed by connecting many different LANs from around the world together.",
           "4.2.2 Explain that modems are used to provide internet access by converting the protocols used by an Internet Service Provider (ISP) to the protocols used by LANs.",
