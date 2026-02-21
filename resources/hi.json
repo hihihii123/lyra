@@ -1,42 +1,25 @@
-[{
-    "name": "Chapter 2 Study Plan",
-    "dates": {
-        "duedate": "2023-11-15",
-        "startdate": "2023-11-01"
-    },
-    "description": "This study plan covers the key concepts and topics in Chapter 2, focusing on algorithms and data structures.",
-    "chapterscovered": [
-        2
-    ],
-    "tasks": [
-        {
-            "name": "Review Algorithms",
-            "topic": "Algorithms",
-            "duedate": "2023-11-05",
-            "description": "Study different types of algorithms, including sorting and searching algorithms.",
-            "startdate": "2023-11-01",
-            "completionstatus": false,
-            "completiontime": ""
+[
+    {
+        "name": "Introduction to Computer Architecture - Task 1",
+        "dates": {
+            "duedate": "2026-02-27",
+            "startdate": "2026-02-20"
         },
-        {
-            "name": "Data Structures Overview",
-            "topic": "Data Structures",
-            "duedate": "2023-11-10",
-            "description": "Understand various data structures such as arrays, linked lists, stacks, and queues.",
-            "startdate": "2023-11-06",
-            "completionstatus": false,
-            "completiontime": ""
-        },
-        {
-            "name": "Practice Problems",
-            "topic": "Algorithms and Data Structures",
-            "duedate": "2023-11-14",
-            "description": "Solve practice problems related to algorithms and data structures to reinforce learning.",
-            "startdate": "2023-11-11",
-            "completionstatus": false,
-            "completiontime": ""
-        }
-    ],
-    "completionstatus": false,
-    "comments": "Focus on understanding the concepts and practicing problems to prepare for the upcoming assessment."
-}]
+        "description": "This task covers Chapter 1.1: Introduction to Computer Architecture. Students will understand what computer architecture means, identify major components (CPU, memory hierarchy, I/O), and distinguish between architecture and implementation.",
+        "confidencelevel": 2,
+        "tasks": [
+            {
+                "name": "Study Task 1: Introduction to Computer Architecture",
+                "chapter": 1,
+                "topic": 1,
+                "duedate": "2026-02-27",
+                "description": "Read Chapter 1.1 Introduction to Computer Architecture. Note definitions, key terms, and explain CPU, memory hierarchy, I/O, and the difference between computer architecture and computer organization. Summarize findings and create a mind map.",
+                "startdate": "2026-02-20",
+                "completionstatus": false,
+                "completiontime": ""
+            }
+        ],
+        "completionstatus": false,
+        "comments": "."
+    }
+]
