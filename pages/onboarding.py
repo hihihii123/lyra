@@ -3,6 +3,10 @@ import streamlit_extras
 from streamlit_extras.stylable_container import stylable_container
 st.set_page_config(page_title="Onboarding",layout='wide')
 
+try:
+    var = st.session_state.user_info
+except Exception:
+    st.switch_page('app.py')
 # Background colour
 st.markdown("""
 <style>

@@ -4,9 +4,14 @@ from streamlit_extras.stylable_container import stylable_container
 import random
 import json
 from backend import marco_invoke_qa_agent
-from pages.temppage import make_nice_task
+from pages.temppage2 import make_nice_task
 st.set_page_config(page_title="Interface",layout='wide')
-
+try:
+    var = st.session_state.user_info
+except Exception:
+    st.switch_page('app.py')
+    
+    
 # Background colour
 st.markdown("""
 <style>
@@ -67,4 +72,7 @@ with col2:
                 st.write(string)
                 gif.empty()
                 txt.empty()
-                make_nice_task(string)                
+                make_nice_task(string) 
+                if "study_thing" not in st.session_state:
+                    st.session_state.study_thing = []
+                st.session_state.study_thing.append(string)   

@@ -2,6 +2,10 @@ import streamlit as st
 import streamlit_extras
 import time
 from streamlit_extras.stylable_container import stylable_container
+try:
+    var = st.session_state.user_info
+except Exception:
+    st.switch_page('app.py')
 st.set_page_config(page_title="Onboarding",layout='wide')
 from backend import invoke_qa_agent
 class task:
