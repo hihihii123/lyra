@@ -7,7 +7,11 @@ try:
 except Exception:
     st.switch_page('app.py')
 
+
+
 col1,col2 = st.columns([1,20])
+
+
 
 with col1:
         m = st.button('⬅️')
