@@ -31,19 +31,34 @@ p{
                 st.write(task['description'])
                 st.write(f"Due date: {task['duedate']}")
 
-def summary(string):
+def summary(string,id):
     inthing = string[1:-1]
     decoded = json.loads(inthing)
     con = st.container(border=True,width="stretch")
     with con:
         h,sh = decoded['name'].split('-')
-        st.subheader(sh)
+        #st.subheader(sh)
+        st.markdown(f"""
+<h3 style='color:white'>{sh}</h3>
+<style>
+.pclass{{
+                    color:white;}},
+                    h1{{
+                    color:white;}},
+                    </style>
+
+                    """,unsafe_allow_html=True)
         for task in decoded['tasks']:
-                st.write(task['name'])
-                st.write(f"Due date: {task['duedate']}")
-        if st.button("More info"):
+                st.markdown(f"""
+<p class="pclass">{task['name']}</p>
+<p class="pclass">Due Date: {task['duedate']}</p>
+""",unsafe_allow_html=True)
+#                 st.markdown(f"""
+# <p class="pclass">Due Date: {task['duedate']}</p>
+# """,unsafe_allow_html=True)
+        if st.button("More info",key=id):
             pass
 
 if __name__ == "__main__":
     make_nice_task(strin1)
-    summary(strin1)
+    summary(strin1,id='67')

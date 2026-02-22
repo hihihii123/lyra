@@ -22,7 +22,7 @@ col1,col2,col3, = st.columns([2,10,2])
 with col2:
     con = st.container(width='stretch')
     with con:
-        st.markdown("""
+        st.markdown(f"""
             <h1 style='color:white'r>
                 &nbsp;&nbsp;&nbsp;Welcome To Lyra!
             </h1>
@@ -30,22 +30,22 @@ with col2:
             <style>
                                         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
                     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-                    h1{
+                    h1{{
                     text-align:center;
                     font-family: 'Comic';sans-serif;
-                    }
-                    #id2{
+                    }}
+                    #id2{{
                     color: white;
-                    }
-                    p{
+                    }}
+                    p{{
                     text-align:center;
                     font-family: 'Inter';sans-serif;
-                    }
-                    #id1{
+                    }}
+                    #id1{{ 
                     color: white;
-                    }
+                    }}
             </style>
-            """,unsafe_allow_html=True)
+            """,unsafe_allow_html=True)# double {{}} to escape cus we are uusing fstring
         with stylable_container(key="goback",css_styles=""" 
 {
                     flex:auto;
