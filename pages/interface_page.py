@@ -5,7 +5,7 @@ import random
 import json
 from backend import marco_invoke_qa_agent
 from pages.temppage2 import make_nice_task
-import firestore
+import firestore_functions
 from auth_functions import getUserId
 
 st.set_page_config(page_title="Interface",layout='wide')
@@ -14,7 +14,7 @@ try:
 except Exception:
     st.switch_page('app.py')
     
-    
+
 # Background colour
 st.markdown("""
 <style>
@@ -81,8 +81,6 @@ with col2:
                 st.session_state.study_thing.append(string)
             
 
-                print("BEFORE", string)
                 newstring = json.loads(string)[0]
-                print("AFTER", newstring)
-                name = newstring.pop("name")
-                firestore.writeorupdateDocument("users", getUserId(), newstring, "studyplans", name)
+                name = newstring['name']
+                firestore_functions.writeorupdateDocument("users", getUserId(), {"data": string}, "studyplans", name)
