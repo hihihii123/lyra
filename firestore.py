@@ -32,7 +32,7 @@ def writeorupdateDocument(collection, documentid, content, subcollection=None, s
     else:
         doc_ref = db.collection(collection).document(documentid)
 
-    doc_ref.set(content, merge=True) # merge=True updates existing fields
+    doc_ref.set(content) # merge=True updates existing fields
 
 
 # Read a specific document, with optional parameter to read subcollections [for id,  use getUserId from auth_functions]
@@ -68,8 +68,9 @@ def deleteFromCollection(collection, documentid): # [doesnt delete subcollection
 
 
 ## TEMPLATE !!!!
-with open("resources/hi.json", "r") as fin:
-    data = json.load(fin)
+if __name__ == "__main__":
+    with open("resources/hi.json", "r") as fin:
+        data = json.load(fin)
 
-name = data.pop("name")
-writeorupdateDocument("users", getUserId(), data, "studyplans", name)
+    name = data.pop("name")
+    writeorupdateDocument("users", getUserId(), data, "studyplans", name)

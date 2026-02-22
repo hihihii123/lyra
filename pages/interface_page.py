@@ -5,6 +5,9 @@ import random
 import json
 from backend import marco_invoke_qa_agent
 from pages.temppage2 import make_nice_task
+import firestore
+from auth_functions import getUserId
+
 st.set_page_config(page_title="Interface",layout='wide')
 try:
     var = st.session_state.user_info
@@ -75,4 +78,11 @@ with col2:
                 make_nice_task(string) 
                 if "study_thing" not in st.session_state:
                     st.session_state.study_thing = []
-                st.session_state.study_thing.append(string)   
+                st.session_state.study_thing.append(string)
+            
+
+                print("BEFORE", string)
+                newstring = json.loads(string)[0]
+                print("AFTER", newstring)
+                name = newstring.pop("name")
+                firestore.writeorupdateDocument("users", getUserId(), newstring, "studyplans", name)
