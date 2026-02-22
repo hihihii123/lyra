@@ -2,7 +2,7 @@ import streamlit as st
 from auth_functions import getUserId
 from streamlit_extras.stylable_container import stylable_container
 from backend import invoke_qa_agent
-from pages.temppage2 import make_nice_task,summary
+from pages.temppage2 import summary
 st.set_page_config(page_title="Home",layout='wide')
 
 
