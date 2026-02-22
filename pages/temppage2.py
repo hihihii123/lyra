@@ -10,7 +10,11 @@ except Exception:
 if st.button('⬅️',key='temppageback'):
     st.switch_page("./pages/home.py")
 def make_nice_task(string):
-    string = string[1:-1]
+    while string[0] == "[":
+        string =string[1:]
+    while string[-1] == "]":
+        string = string[:-1]
+    print(string)
     decoded = json.loads(string)
     st.write(decoded)
     con = st.container(border=True,width=700)
@@ -32,7 +36,11 @@ p{
                 st.write(f"Due date: {task['duedate']}")
 
 def summary(string,id):
-    inthing = string[1:-1]
+    while string[0] == "[":
+        string =string[1:]
+    while string[-1] == "]":
+        string = string[:-1]
+    inthing = string
     decoded = json.loads(inthing)
     con = st.container(border=True,width="stretch")
     with con:
