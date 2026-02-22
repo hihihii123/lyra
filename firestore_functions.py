@@ -40,6 +40,14 @@ def readDocumentFromCollection(collection, documentid, subcollection=None, subco
     if subcollection:
         if not subcollectionid:
             print("subcollectionid is required")
+            doc_ref = db.collection(collection).document(documentid)
+            all_docs = []
+
+            for subref in doc_ref.collections():
+                for doc in subref.stream():
+                    doc_data = doc.to_dict()[field]
+                    all_docs.append(doc_data)
+            return all_docs
         doc_ref = db.collection(collection).document(documentid).collection(subcollection).document(subcollectionid)
     else:
         doc_ref = db.collection(collection).document(documentid)
@@ -72,5 +80,5 @@ if __name__ == "__main__":
     with open("resources/hi.json", "r") as fin:
         data = json.load(fin)
 
-    name = data.pop("name")
+    name = data["name"]
     writeorupdateDocument("users", getUserId(), data, "studyplans", name)
