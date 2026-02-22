@@ -1,42 +1,78 @@
-[{
-    "name": "Chapter 2 Study Plan",
-    "dates": {
-        "duedate": "2023-11-15",
-        "startdate": "2023-11-01"
-    },
-    "description": "This study plan covers the key concepts and topics in Chapter 2, focusing on algorithms and data structures.",
-    "chapterscovered": [
-        2
-    ],
+{
+    "name": "Chapter 1 - Computer Architecture",
+    "description": "Study plan focusing on Chapter 1: Computer Architecture (Introduction) and Chapter 2: Data Representation (Representing Text). This plan adds two new tasks aligned with the provided textbook topics and includes guiding questions and objectives to support understanding.",
     "tasks": [
         {
-            "name": "Review Algorithms",
-            "topic": "Algorithms",
-            "duedate": "2023-11-05",
-            "description": "Study different types of algorithms, including sorting and searching algorithms.",
-            "startdate": "2023-11-01",
+            "name": "1. Computer Architecture - 1.1 Introduction to Computer Architecture",
+            "confidencelevel": 5,
+            "chapter": 1,
+            "topic": 1.1,
+            "duedate": "TBD",
+            "description": "Study the fundamentals of computer architecture, including the purpose of architecture, core components, and factors influencing performance. [Guiding questions and objectives provided below]",
+            "startdate": "TBD",
             "completionstatus": false,
-            "completiontime": ""
+            "completiontime": "",
+            "definitions": [
+                "Von Neumann architecture",
+                "Harvard architecture",
+                "CPU",
+                "memory hierarchy",
+                "bus",
+                "instruction set architecture",
+                "pipeline"
+            ],
+            "guiding_qns": [
+                "What is the purpose of computer architecture and what are its main components?",
+                "How do CPU, memory, and I/O interact in a typical system?",
+                "What is the difference between Von Neumann and Harvard architectures?",
+                "What drives architectural decisions in terms of performance and energy efficiency?",
+                "What is memory hierarchy and why is it important?"
+            ],
+            "objectives": [
+                "Define computer architecture and identify its major components.",
+                "Explain how the CPU, memory, and I/O subsystem interact.",
+                "Describe Von Neumann vs Harvard architectures.",
+                "Explain the concept of memory hierarchy and its impact on performance.",
+                "Identify factors that influence architectural decisions."
+            ]
         },
         {
-            "name": "Data Structures Overview",
-            "topic": "Data Structures",
-            "duedate": "2023-11-10",
-            "description": "Understand various data structures such as arrays, linked lists, stacks, and queues.",
-            "startdate": "2023-11-06",
+            "name": "2. Data Representation - 2.4 Representing Text",
+            "confidencelevel": 2,
+            "chapter": 2,
+            "topic": 2.4,
+            "duedate": "TBD",
+            "description": "Explore how text is encoded and stored in computers, including character sets, encodings, and binary representations. [Guiding questions and objectives provided below]",
+            "startdate": "TBD",
             "completionstatus": false,
-            "completiontime": ""
-        },
-        {
-            "name": "Practice Problems",
-            "topic": "Algorithms and Data Structures",
-            "duedate": "2023-11-14",
-            "description": "Solve practice problems related to algorithms and data structures to reinforce learning.",
-            "startdate": "2023-11-11",
-            "completionstatus": false,
-            "completiontime": ""
+            "completiontime": "",
+            "definitions": [
+                "ASCII",
+                "Unicode",
+                "UTF-8",
+                "UTF-16",
+                "character encoding",
+                "code point",
+                "code unit",
+                "endian-ness"
+            ],
+            "guiding_qns": [
+                "What are the goals of text encoding in computing?",
+                "What is ASCII and what are its limitations?",
+                "What is Unicode and why was it created?",
+                "What are UTF-8 and UTF-16 encodings and how do they differ?",
+                "How do you encode and decode characters in binary form?",
+                "What is endianness and how can it affect text representation on different systems?"
+            ],
+            "objectives": [
+                "Explain the purpose of text encoding and the relationship between characters, code points, and encodings.",
+                "Describe ASCII and Unicode standards and their limitations.",
+                "Explain UTF-8 and UTF-16 encodings and when each is used.",
+                "Demonstrate how to convert text to binary representations and back.",
+                "Discuss the concept of endianness and its impact on text data."
+            ]
         }
     ],
     "completionstatus": false,
-    "comments": "Focus on understanding the concepts and practicing problems to prepare for the upcoming assessment."
-}]
+    "comments": "New tasks added for study plan; align with textbook topics and provide guiding questions and objectives."
+}

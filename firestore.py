@@ -67,15 +67,9 @@ def deleteFromCollection(collection, documentid): # [doesnt delete subcollection
 
 
 
-## EXAMPLE
+## TEMPLATE !!!!
 with open("resources/hi.json", "r") as fin:
     data = json.load(fin)
 
-# HERE !!!
-# data = data[0]
-# writeorupdateDocument("users", getUserId(), {"name": data["name"], "duedate": data["dates"]["duedate"], "startdate": data["dates"]["startdate"], "description": data["description"], "chapterscovered": data["chapterscovered"]})
-# data = data["tasks"][0]
-# writeorupdateDocument("users", getUserId(), {"topic": data["topic"], "duedate": data["duedate"], "description": data["description"], "startdate": data["startdate"], "completionstatus": data["completionstatus"]}, "tasks", data["name"])
-
-# print(readDocumentFromCollection('users', '2'))
-# deleteFromFirestore("users", "2")
+name = data.pop("name")
+writeorupdateDocument("users", getUserId(), data, "studyplans", name)
