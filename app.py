@@ -156,5 +156,5 @@ with col1:
     # st.header('Delete account:')
     # password = st.text_input(label='Confirm your password',type='password')
     # st.button(label='Delete Account',on_click=auth_functions.delete_account,args=[password],type='primary')
-if st.button('[DEBUG] check onboarding'):
-    st.switch_page("./pages/onboarding.py")
+# if st.button('[DEBUG] check onboarding'):
+#     st.switch_page("./pages/onboarding.py")
