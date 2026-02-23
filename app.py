@@ -17,7 +17,9 @@ st.markdown("""
 """,unsafe_allow_html=True)
 
 
+
 ## NOT LOGGED IN
+
 #adapted from some streamlit help
 col1,col2,col3, = st.columns([7,2,2])
 

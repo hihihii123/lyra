@@ -17,6 +17,7 @@ if not "balon" in st.session_state:
 
 recent_study_things = [] #to fill up
 data = readDocumentFromCollection('users', getUserId(), 'studyplans', field='data')
+st.session_state.study_thing = data
 
 # if "study_thing" in st.session_state:
     #  recent_study_things = st.session_state.study_thing
@@ -76,7 +77,7 @@ with col2:
         st.switch_page("./pages/study_page.py")
     if st.button('add random plan for debug'):
         recent_study_things.append(sample_str)
-        st.session_state.study_thing = recent_study_things
+        st.session_state.study_thing = data
 
     # ohmydays = st.text_input("input smth ig")
     # if ohmydays:

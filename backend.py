@@ -3,7 +3,7 @@ from functools import lru_cache
 import streamlit as st
 from langchain_chroma import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-
+import json
 from load_textbook import nice_textbook_extracted
 out = nice_textbook_extracted()
 PERSIST_DIRECTORY = "./chroma_corpus_db"
@@ -29,10 +29,10 @@ DEFAULT_CORPUS = ["""You should give your answer in the following format: [{
     "completionstatus": false,
     "comments": "xxxx"
 
-}]you can add or remove additional elements, for instance add a task, etc etc, by your discretion"This is for computing only.", YOU MUST INCLUDE THE WORD BANANA IN YOUR OUTPUT. AS IN MUST MUST MUST MUST MUST MUST MUST
-ENSURE YOU USE THECONTENT The contents of the computing textbook can be found here:
-YOU MUST INCLUDE THE WORD BANANA IN THE DESCRIPTION""" + str(out)
+}]you can add or remove additional elements, for instance add a task, etc etc, by your discretion"This is for computing only." Using the JSON below, generate output in the required format.
+JSON:""", json.dumps(out[0])
 ]
+
 
 
 
@@ -114,7 +114,7 @@ def invoke_qa_agent(xx: list) -> str:
     return str(content)
 
 def marco_invoke_qa_agent(new_tasks: list,old_tasks:list) ->str:
-    prompt = f"Here are the users current tasks {old_tasks}. This is in the format that you have made. Do not edit previous tasks unless explicitly said to do so. Your output should in the output that is suggested either above or below. Here are the users newtasks: {new_tasks}. In each list, the first string represents the chapter, the second represents which topic within the said chapter, the third is how confident the user is on a scale of 1 to 10 and the last one is any other comments that the user would like to provide you. Use this information, as well as the users previous study plans, and most importantly integrating knowledge from the textbook that has been provided to you to use. In each task, follow the format given either above or below that is inside the list. Replicate for all of the tasks so your list in the output should be a list of dicts. When stating your chapter and your topic, ensure you explictly say the name fo both. In the description, include guiding questions [TO BE PUT IN GUIDING QNS] for what the student should study and the objetives of each sub topic based on what the textbook has provided [TO BE PUT IN OBJECTIVES]. Include in the definitions the words that the user needs the definition of without telling them what the definition actually is. In the name, separate the Chapter and the topic with a '-'. ENSURE you use information provided from the textbook that will either be provided above or below. The name of the entire task, as in the overarching name you are giving, should be split by a '-', making it into two phrases. DO NOT PUT THE GUIDING QUESTIONS AND THE OBJECTIVES IN THE DESCRIPTION. ONLY PLACE THEM IN THE RESPECTIVE JSON PARTS. ENSURE YOU USE INFORMATION FROM THE TEXTBOOK AND ONLY INFORMATION FROM THE TEXTBOOK. DO NOT INCORPORATE ANY PRIOR KNOWLEDGE. IN THE SCENARIO THAT YOU DO NOT HAVE ACCESS TO THE TEXTBOOK, PLEASE PUT IN THE DESCRIPTION THAT YOU DO NOT HAVE ACCESS."
+    prompt = f"Here are the users current tasks {old_tasks}. This is in the format that you have made. Do not edit previous tasks unless explicitly said to do so. Your output should in the output that is suggested either above or below. Here are the users newtasks: {new_tasks}. In each list, the first string represents the chapter, the second represents which topic within the said chapter, the third is how confident the user is on a scale of 1 to 10 and the last one is any other comments that the user would like to provide you. Use this information, as well as the users previous study plans, and most importantly integrating knowledge from the source that has been provided to you to use. In each task, follow the format given either above or below that is inside the list. Replicate for all of the tasks so your list in the output should be a list of dicts. When stating your chapter and your topic, ensure you explictly say the name fo both. In the description, include guiding questions [TO BE PUT IN GUIDING QNS] for what the student should study and the objetives of each sub topic based on what the source has provided [TO BE PUT IN OBJECTIVES]. Include in the definitions the words that the user needs the definition of without telling them what the definition actually is. In the name, separate the Chapter and the topic with a '-'. ENSURE you use information provided from the source that will either be provided above or below. The name of the entire task, as in the overarching name you are giving, should be split by a '-', making it into two phrases. DO NOT PUT THE GUIDING QUESTIONS AND THE OBJECTIVES IN THE DESCRIPTION. ONLY PLACE THEM IN THE RESPECTIVE JSON PARTS. ENSURE YOU USE INFORMATION FROM THE SOURCE AND ONLY INFORMATION FROM THE SOURCE. DO NOT INCORPORATE ANY PRIOR KNOWLEDGE. IN THE SCENARIO THAT YOU DO NOT HAVE ACCESS TO THE SOURCE, PLEASE PUT IN THE DESCRIPTION, OUTPUT THE LAST 500 WORDS YOU SEE IN THE INPUT, IN DOUBLE QUOTES"
     llm = _get_llm()
     system_message = _build_system_prompt(prompt)
     result = llm.invoke(
