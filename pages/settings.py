@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_extras.stylable_container import stylable_container
 import auth_functions
+import datetime
 st.set_page_config(page_title="Settings",layout='wide')
 try:
     var = st.session_state.user_info
@@ -23,7 +24,13 @@ with col1:
 with col2:
     st.header('User information:')
     try:
-        st.write(st.session_state.user_info)
+        st.subheader(f"Email used: {st.session_state.user_info['email']}")
+        #st.subheader(f"Date created: {st.session_state.user_info}")
+       #st.subheader(f"Date created: {datetime.datetime.fromtimestamp(st.session_state.user_info['createdAt'])}")
+        st.subheader(f"Account created: {datetime.datetime.fromtimestamp(int(st.session_state.user_info['validSince']))}")
+
+
+
     except Exception:
         st.switch_page('app.py')
 

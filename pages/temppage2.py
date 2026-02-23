@@ -190,8 +190,8 @@ def summary(string,id):
 
         else:
             st.session_state.show_edits = False
-        if st.button("Delete Task"):
-            delete_plan('hi')
+        # if st.button("Delete Task"):
+        #     delete_plan('hi')
 
 
         
