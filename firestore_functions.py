@@ -11,9 +11,10 @@ creds = service_account.Credentials.from_service_account_info(st.secrets["firest
 db = firestore.Client(credentials=creds, project=st.secrets['firestore']['project_id'])
 
 
+
 ## FIRESTORE FUNCTIONS
 
-# Write a document [maybe change documentid to userid if root level is standardised]
+# Write a document
 def writeorupdateDocument(collection, documentid, content, subcollection=None, subcollectionid=None):
     """
     Docstring for writeorupdateDocument
@@ -38,8 +39,10 @@ def writeorupdateDocument(collection, documentid, content, subcollection=None, s
 # Read a specific document, with optional parameter to read subcollections [for id,  use getUserId from auth_functions]
 def readDocumentFromCollection(collection, documentid, subcollection=None, subcollectionid=None, field=None):
     if subcollection:
+
+        # Reads all documents from a subcollection
         if not subcollectionid:
-            print("subcollectionid is required")
+            print(f"Accessing all documents in {subcollection}")
             doc_ref = db.collection(collection).document(documentid)
             all_docs = []
 

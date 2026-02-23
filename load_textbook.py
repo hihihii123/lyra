@@ -4072,4 +4072,4 @@ def nice_textbook_extracted():
     return out
 if __name__ == "__main__":
     e = nice_textbook_extracted()
-    print(e[-1])
+    print(e[0])

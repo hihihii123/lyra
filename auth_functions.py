@@ -14,7 +14,8 @@ def sign_in_with_email_and_password(email, password):
     raise_detailed_error(request_object) # (is a user defined function)
     return request_object.json() # Returns a dict/list
 
-def get_account_info(id_token): # Checks if user is valid
+# Checks if user is valid
+def get_account_info(id_token):
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8"}
     data = json.dumps({"idToken": id_token})  # Proof user has signed in
@@ -22,10 +23,11 @@ def get_account_info(id_token): # Checks if user is valid
     raise_detailed_error(request_object)
     return request_object.json()
 
+# Calls on a firebase function to verify
 def send_email_verification(id_token):
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8"}
-    data = json.dumps({"requestType": "VERIFY_EMAIL", "idToken": id_token}) # Calls on a firebase function to verify
+    data = json.dumps({"requestType": "VERIFY_EMAIL", "idToken": id_token}) # [this one]
     request_object = requests.post(request_ref, headers=headers, data=data)
     raise_detailed_error(request_object)
     return request_object.json()
@@ -38,7 +40,8 @@ def send_password_reset_email(email):
     raise_detailed_error(request_object)
     return request_object.json()
 
-def create_user_with_email_and_password(email, password): # Sign up function
+# Sign up function
+def create_user_with_email_and_password(email, password):
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8" }
     data = json.dumps({"email": email, "password": password, "returnSecureToken": True})
@@ -46,6 +49,7 @@ def create_user_with_email_and_password(email, password): # Sign up function
     raise_detailed_error(request_object)
     return request_object.json()
 
+# Delete account
 def delete_user_account(id_token):
     request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/deleteAccount?key={0}".format(st.secrets['FIREBASE_WEB_API_KEY'])
     headers = {"content-type": "application/json; charset=UTF-8"}
@@ -54,17 +58,20 @@ def delete_user_account(id_token):
     raise_detailed_error(request_object)
     return request_object.json()
 
+# Get user id from cache
 def getUserId():
     info = st.session_state.get("user_info")
     if not info:
         return "No user id found"
     return info.get("localId")
 
+# Checks status code; 200-299 okay, 400-599 no
 def raise_detailed_error(request_object):
     try:
-        request_object.raise_for_status() # Checks status code; 200-299 okay, 400-599 no
+        request_object.raise_for_status()
     except requests.exceptions.HTTPError as error:
         raise requests.exceptions.HTTPError(error, request_object.text)
+
 
 
 ## AUTHENTIFICATION FUNCTIONS

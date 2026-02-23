@@ -5,6 +5,7 @@ from langchain_chroma import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 import datetime
 
+import json
 from load_textbook import nice_textbook_extracted
 out = nice_textbook_extracted()
 PERSIST_DIRECTORY = "./chroma_corpus_db"
@@ -30,10 +31,10 @@ DEFAULT_CORPUS = ["""You should give your answer in the following format: [{
     "completionstatus": false,
     "comments": "xxxx"
 
-}]you can add or remove additional elements, for instance add a task, etc etc, by your discretion"This is for computing only.", YOU MUST INCLUDE THE WORD BANANA IN YOUR OUTPUT. AS IN MUST MUST MUST MUST MUST MUST MUST
-ENSURE YOU USE THECONTENT The contents of the computing textbook can be found here:
-YOU MUST INCLUDE THE WORD BANANA IN THE DESCRIPTION""" + str(out)
+}]you can add or remove additional elements, for instance add a task, etc etc, by your discretion"This is for computing only." Using the JSON below, generate output in the required format.
+JSON:""", json.dumps(out[0])
 ]
+
 
 
 
