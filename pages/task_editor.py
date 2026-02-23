@@ -4,6 +4,9 @@ from streamlit_extras.stylable_container import stylable_container
 import random
 import json
 from backend import marco_invoke_qa_agent
+import firestore_functions
+from auth_functions import getUserId
+
 
 try:
     var = st.session_state.user_info
@@ -51,7 +54,9 @@ def make_edits(id=0):
         
             
             if st.button("Save what you have: ",key=f"button_{id}_{c}"):
+                firebase_name = working_data['name']
                 st.session_state.study_thing[id] = "[" + json.dumps(working_data) + "]"
+                firestore_functions.writeorupdateDocument("users", getUserId(), {"data": st.session_state.study_thing[id]}, "studyplans", firebase_name)
                 st.rerun()
             c += 1
         

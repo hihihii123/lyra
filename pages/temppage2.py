@@ -9,8 +9,12 @@ try:
     var = st.session_state.user_info
 except Exception:
     st.switch_page('app.py')
+
+
 if "show_edits" not in st.session_state:
     st.session_state.show_edits = False
+if "showmore" not in st.session_state:
+    st.session_state.showmore= False
 if st.button('⬅️',key='temppageback'):
     st.switch_page("./pages/home.py")
 def make_nice_task(string):
@@ -60,11 +64,37 @@ def summary(string,id):
                     </style>
 
                     """,unsafe_allow_html=True)
+        print("What is it?",st.session_state.showmore)
         for task in decoded['tasks']:
                 st.markdown(f"""
 <p class="pclass">{task['name']}</p>
 <p class="pclass">Due Date: {task['duedate']}</p>
 """,unsafe_allow_html=True)
+                
+                if st.session_state.showmore == True:
+                    st.markdown(f"""
+<p class="pclass">{task['description']}</p>
+<p class="pclass">Guiding Questions: {task['guiding_qns']}</p>
+<p class="pclass">Objectives: {task['objectives']}</p>
+
+""",unsafe_allow_html=True)
+                if task['completionstatus'] == True:
+                    st.success("Completed!")
+                else:
+                    st.warning("Incomplete")
+        showmore = st.toggle("Show more",key=f"showmore_{id}",value=False)
+        if showmore:
+            st.session_state.showmore = True
+        else:
+            st.session_state.showmore=False
+        if st.session_state.showmore:
+            st.session_state.show_edits = True
+        else:
+            st.session_state.show_edits = False
+
+        
+
+
 #                 st.markdown(f"""
 # <p class="pclass">Due Date: {task['duedate']}</p>
 # """,unsafe_allow_html=True)
