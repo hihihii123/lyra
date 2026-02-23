@@ -7,4 +7,6 @@ langchain-openai
 langchain-chroma
 langchain-community
 ormsgpack
-google-cloud-firestore
+google-cloud-firestore==2.16.0
+google-cloud-core
+google-auth
