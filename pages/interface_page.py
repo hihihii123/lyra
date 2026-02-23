@@ -13,6 +13,7 @@ try:
     var = st.session_state.user_info
 except Exception:
     st.switch_page('app.py')
+
     
 
 # Background colour
@@ -84,3 +85,6 @@ with col2:
                 newstring = json.loads(string)[0]
                 name = newstring['name']
                 firestore_functions.writeorupdateDocument("users", getUserId(), {"data": string}, "studyplans", name)
+with col1:
+    if st.button('🏠'):
+        st.switch_page('./pages/home.py')
