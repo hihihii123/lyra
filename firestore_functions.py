@@ -6,7 +6,9 @@ import json
 
 
 ## LOAD DB
-
+if "firestore" not in st.secrets:
+    st.error("Firestore not in secrets")
+    st.stop()
 creds = service_account.Credentials.from_service_account_info(st.secrets["firestore"])
 db = firestore.Client(credentials=creds, project=st.secrets['firestore']['project_id'])
 
