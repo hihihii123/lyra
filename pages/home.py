@@ -6,7 +6,8 @@ from pages.temppage2 import make_nice_task,summary
 from firestore_functions import readDocumentFromCollection
 st.set_page_config(page_title="Home",layout='wide')
 
-
+if "showmore" not in st.session_state:
+    st.session_state.showmore = False
 try:
     var = st.session_state.user_info
 except Exception:
@@ -25,7 +26,7 @@ st.session_state.study_thing = data
 
 
 uid = getUserId()
-st.header(f"Welcome, user: {uid}")
+st.header(f"Welcome, user!")
 if st.button("Make a plan!"):
     st.switch_page("./pages/study_page.py")   
 st.subheader("Here are your available plans: ") 

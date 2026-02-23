@@ -40,9 +40,82 @@ p{
                                  }
 """,unsafe_allow_html=True)
                 st.write(task['description'])
+                st.write("Objectives")
+                for objective in task['objectives']:
+                    st.markdown(f"""
+*{objective}
+                    """)
+                st.write("Guiding Questions")
+                for qn in task['guiding_qns']:
+                    st.markdown(f"""
+*{qn}
+                    """)
+                st.write("Definitions",task['definitions'])
+                for defin in task['definitions']:
+                    st.markdown(f"""
+*{defin}
+                    """)                    
                 st.write(f"Due date: {task['duedate']}")
 
+# def summary(string,id):
+#     # Initialize dictionary for showmore states if not exists
+#     if "showmore_states" not in st.session_state:
+#         st.session_state.showmore_states = {}
+    
+#     orig_string = string
+#     while string[0] == "[":
+#         string =string[1:]
+#     while string[-1] == "]":
+#         string = string[:-1]
+#     inthing = string
+#     decoded = json.loads(inthing)
+#     con = st.container(border=True,width="stretch")
+#     with con:
+#         h,sh = decoded['name'].split('-')
+#         st.markdown(f"""
+# <h3 style='color:white'>{sh}</h3>
+# <style>
+# .pclass{{
+#                     color:white;}},
+#                     h1{{
+#                     color:white;}},
+#                     </style>
+#                     """,unsafe_allow_html=True)
+        
+#         for task in decoded['tasks']:
+#             st.markdown(f"""
+# <p class="pclass">{task['name']}</p>
+# <p class="pclass">Due Date: {task['duedate']}</p>
+# """,unsafe_allow_html=True)
+            
+#             # Check this specific plan's showmore state
+#             if st.session_state.showmore_states.get(id, False):
+#                 st.markdown(f"""
+# <p class="pclass">{task['description']}</p>
+# <p class="pclass">Guiding Questions: {task['guiding_qns']}</p>
+# <p class="pclass">Objectives: {task['objectives']}</p>
+# """,unsafe_allow_html=True)
+            
+#             if task['completionstatus'] == "True":
+#                 st.success("Completed!")
+#             else:
+#                 st.warning("Incomplete")
+        
+#         # Use the dictionary for toggle state
+#         current_state = st.session_state.showmore_states.get(id, False)
+#         showmore = st.toggle("Show more", key=f"showmore_{id}", value=current_state)
+#         st.session_state.showmore_states[id] = showmore
+        
+#         e = st.toggle("Show edits", key=f"toggle_{id}")
+#         if e:
+#             st.session_state.show_edits = True
+#         else:
+#             st.session_state.show_edits = False
+            
+#         if st.session_state.show_edits:
+#             make_edits(id=st.session_state.study_thing.index(orig_string))
 def summary(string,id):
+    empty_list = []
     orig_string = string
     while string[0] == "[":
         string =string[1:]
@@ -51,6 +124,7 @@ def summary(string,id):
     inthing = string
     decoded = json.loads(inthing)
     con = st.container(border=True,width="stretch")
+    
     with con:
         h,sh = decoded['name'].split('-')
         #st.subheader(sh)
@@ -70,34 +144,47 @@ def summary(string,id):
 <p class="pclass">{task['name']}</p>
 <p class="pclass">Due Date: {task['duedate']}</p>
 """,unsafe_allow_html=True)
-                
-                if st.session_state.showmore == True:
-                    st.markdown(f"""
-<p class="pclass">{task['description']}</p>
-<p class="pclass">Guiding Questions: {task['guiding_qns']}</p>
-<p class="pclass">Objectives: {task['objectives']}</p>
+#                 if st.session_state.showmore == True:
+#                     st.markdown(f"""
+# <p class="pclass">{task['description']}</p>
+# <p class="pclass">Guiding Questions: {task['guiding_qns']}</p>
+# <p class="pclass">Objectives: {task['objectives']}</p>
 
-""",unsafe_allow_html=True)
-                if task['completionstatus'] == True:
+# """,unsafe_allow_html=True)
+                empty_list.append(st.empty())
+                if task['completionstatus'] == "True":
                     st.success("Completed!")
                 else:
                     st.warning("Incomplete")
-        showmore = st.toggle("Show more",key=f"showmore_{id}",value=False)
-        if showmore:
-            st.session_state.showmore = True
-        else:
-            st.session_state.showmore=False
+
+        showmore = st.toggle("Show more", key=f"showmore_{id}", value=st.session_state.showmore)
+        st.session_state.showmore = showmore    
         if st.session_state.showmore:
             st.session_state.show_edits = True
+            for i in range(len(decoded['tasks'])):
+                empty_list[i] = st.markdown(f"""
+                                            <style>
+.pclass{{
+                    color:white;
+                    font-size:12px;
+                                            }}</style>
+                    
+<p class="pclass",style="font-size:12px">{decoded['tasks'][i]['description']}</p>
+<p class="pclass",style="font-size:12px">Guiding Questions: {str(decoded['tasks'][i]['guiding_qns'])}</p>
+<p class="pclass",style="font-size:12px">Objectives: {str(decoded['tasks'][i]['objectives'])}</p>
+
+""",unsafe_allow_html=True)
+
+
         else:
             st.session_state.show_edits = False
 
         
 
 
-#                 st.markdown(f"""
-# <p class="pclass">Due Date: {task['duedate']}</p>
-# """,unsafe_allow_html=True)
+# #                 st.markdown(f"""
+# # <p class="pclass">Due Date: {task['duedate']}</p>
+# # """,unsafe_allow_html=True)
         e = st.toggle("Show edits",key=f"toggle_{id}")
         if e:
             st.session_state.show_edits = True
