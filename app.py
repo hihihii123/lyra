@@ -97,9 +97,6 @@ with col1:
 ## LOGGED IN
             else:
                 # Switches pages 
-                if newuser:
-                    st.switch_page("./pages/onboarding.py")
-                else:
                     st.switch_page("./pages/home.py")
             
 
