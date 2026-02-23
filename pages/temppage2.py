@@ -10,6 +10,18 @@ try:
 except Exception:
     st.switch_page('app.py')
 
+@st.dialog("Delete?",dismissible=False)
+def delete_plan(string):
+    st.write("Are you sure you want to delete this?")
+    _,col1,col2,_ = st.columns([2,1,1,2])
+    with col1:
+      if st.button("Yes."):
+          #@abigail459 delete here
+          pass
+    with col2:
+      if st.button("No"):
+          st.rerun()
+
 
 if "show_edits" not in st.session_state:
     st.session_state.show_edits = False
@@ -178,6 +190,9 @@ def summary(string,id):
 
         else:
             st.session_state.show_edits = False
+        if st.button("Delete Task"):
+            delete_plan('hi')
+
 
         
 
