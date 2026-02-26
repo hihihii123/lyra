@@ -46,7 +46,7 @@ with col1:
                         }
                         """):
              st.text("There doesn't seem to be any recent study tasks!")
-             if st.button("create one!"):
+             if st.button("create one!",key="col1_button"):
                   st.switch_page("./pages/study_page.py")
             
     else:
@@ -85,7 +85,7 @@ with col2:
                         }
                         """):
              st.text("There doesn't seem to be any recent study tasks!")
-             if st.button("create one!"):
+             if st.button("create one!",key='col2_button'):
                   st.switch_page("./pages/study_page.py")
             
     else:
@@ -132,7 +132,7 @@ with col4:
                         }
                         """):
              st.text("There doesn't seem to be any recent study tasks!")
-             if st.button("create one!"):
+             if st.button("create one!",key="col3_button"):
                   st.switch_page("./pages/study_page.py")
             
     else:
