@@ -36,7 +36,7 @@ def make_nice_task(string):
     while string[-1] == "]":
         string = string[:-1]
     decoded = json.loads(string)
-    st.write(decoded)
+    #st.write(decoded)
     con = st.container(border=True,width=700)
     with con:
         print("DECODED NAME: ",decoded['name'])

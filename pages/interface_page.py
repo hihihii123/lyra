@@ -74,7 +74,7 @@ with col2:
                 selected = random.choice(['https://media.tenor.com/tpw97n05O70AAAAi/vacameme129.gif','https://media1.tenor.com/m/byY2-DioMQ4AAAAd/quirky-clown-bread-join-voice-call-vc.gif','https://media1.tenor.com/m/lfDATg4Bhc0AAAAC/happy-cat.gif','https://media1.tenor.com/m/fitGu2TwtHoAAAAd/cat-hyppy.gif'])
                 gif.markdown(f"![GIF not playing :()]({selected})")
                 string = marco_invoke_qa_agent(st.session_state['tasklist'],old_tasks="No old tasks")
-                st.write(string)
+                #st.write(string)
                 gif.empty()
                 txt.empty()
                 make_nice_task(string) 
