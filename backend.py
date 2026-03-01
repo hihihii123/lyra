@@ -54,12 +54,12 @@ def _get_vector_store() -> Chroma:
         return Chroma.from_texts(
             DEFAULT_CORPUS,
             embeddings_model,
-            persist_directory=PERSIST_DIRECTORY,
+           # persist_directory=PERSIST_DIRECTORY,
         )
 
     return Chroma(
         embedding_function=embeddings_model,
-        persist_directory=PERSIST_DIRECTORY,
+       # persist_directory=PERSIST_DIRECTORY,
     )
 
 
