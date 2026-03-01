@@ -9,6 +9,22 @@ import datetime
 import json
 from load_textbook import nice_textbook_extracted
 out = nice_textbook_extracted()
+chapters = [
+  "1. Computer Architecture",
+  "2. Data Representation",
+  "3. Logic Gates",
+  "4. Programming",
+  "5. Input Validation",
+  "6. Testing and Debugging",
+  "7. Algorithm Design",
+  "8. Software Engineering",
+  "9. Spreadsheets",
+  "10. Networking",
+  "11. Security and Privacy",
+  "12. Intellectual Property",
+  "13. Impact of Computing",
+  "14. Emerging Technologies"
+]
 PERSIST_DIRECTORY = "./chroma_corpus_db"
 DEFAULT_CORPUS = ["""You should give your answer in the following format: [{
     "name": "name",
@@ -118,6 +134,11 @@ def invoke_qa_agent(xx: list) -> str:
 
 def marco_invoke_qa_agent(new_tasks: list,old_tasks:list) ->str:
     prompt = f"Here are the users current tasks {old_tasks}. This is in the format that you have made. Do not edit previous tasks unless explicitly said to do so. Your output should in the output that is suggested either above or below. Here are the users newtasks: {new_tasks}. In each list, the first string represents the chapter, the second represents which topic within the said chapter, the third is how confident the user is on a scale of 1 to 10 and the last one is any other comments that the user would like to provide you. Use this information, as well as the users previous study plans, and most importantly integrating knowledge from the textbook that has been provided to you to use. In each task, follow the format given either above or below that is inside the list. Replicate for all of the tasks so your list in the output should be a list of dicts. When stating your chapter and your topic, ensure you explictly say the name fo both. In the description, include guiding questions [TO BE PUT IN GUIDING QNS] for what the student should study and the objetives of each sub topic based on what the textbook has provided [TO BE PUT IN OBJECTIVES]. Include in the definitions the words that the user needs the definition of without telling them what the definition actually is. In the name, separate the Chapter and the topic with a '-'. ENSURE you use information provided from the textbook that will either be provided above or below. The name of the entire task, as in the overarching name you are giving, should be split by a '-', making it into two phrases. DO NOT PUT THE GUIDING QUESTIONS AND THE OBJECTIVES IN THE DESCRIPTION. ONLY PLACE THEM IN THE RESPECTIVE JSON PARTS. ENSURE YOU USE INFORMATION FROM THE TEXTBOOK AND ONLY INFORMATION FROM THE TEXTBOOK. DO NOT INCORPORATE ANY PRIOR KNOWLEDGE. IN THE SCENARIO THAT YOU DO NOT HAVE ACCESS TO THE TEXTBOOK, PLEASE PUT IN THE DESCRIPTION THAT YOU DO NOT HAVE ACCESS. in the name of the task, as in the name of the entire study plan, include a '-' separating the name and the subheader. The current date is {datetime.datetime.now()}. "
+    a = nice_textbook_extracted()
+    for task in new_tasks:
+        for i in range(len(chapters)):
+            if chapters[i] == task[0]:
+                prompt += a[i] #get it cus chatgpt is AI
     llm = _get_llm()
     system_message = _build_system_prompt(prompt)
     result = llm.invoke(
@@ -129,6 +150,7 @@ def marco_invoke_qa_agent(new_tasks: list,old_tasks:list) ->str:
     content = getattr(result, "content", "")
     if isinstance(content, str):
         return content
+    print("CONTENT",str(content))
     return str(content)
 
 
