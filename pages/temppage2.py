@@ -36,7 +36,7 @@ def make_nice_task(string):
     while string[-1] == "]":
         string = string[:-1]
     print('JSON DATA!',string)
-    st.write(string)
+    #st.write(string)
     decoded = json.loads(string)
     #st.write(decoded)
     con = st.container(border=True,width=700)
